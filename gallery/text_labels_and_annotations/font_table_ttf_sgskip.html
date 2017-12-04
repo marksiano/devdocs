@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Font Table TTF &mdash; Matplotlib 2.0.2.post4416.dev0+g1df513f documentation</title>
+    <title>Font Table TTF &mdash; Matplotlib 2.1.0.post986+g1493192 documentation</title>
     
     <link rel="stylesheet" href="../../_static/mpl.css"
 type="text/css" />
@@ -17,7 +17,7 @@ type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '2.0.2.post4416.dev0+g1df513f',
+        VERSION:     '2.1.0.post986+g1493192',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -28,29 +28,31 @@ type="text/css" />
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within Matplotlib 2.0.2.post4416.dev0+g1df513f documentation"
+          title="Search within Matplotlib 2.1.0.post986+g1493192 documentation"
           href="../../_static/opensearch.xml"/>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html"
 />
     <link rel="search" title="Search" href="../../search.html"
 />
-    <link rel="top" title="Matplotlib 2.0.2.post4416.dev0+g1df513f documentation" href="../../index.html" /> 
+    <link rel="top" title="Matplotlib 2.1.0.post986+g1493192 documentation" href="../../index.html" /> 
 
 
   </head>
   <body>
 
 
+<div id="unreleased-message">
+    You are reading documentation for the unreleased version of Matplotlib.
+    <a href="https://matplotlib.org/search.html?q=Font%20Table%20TTF&amp;check_keywords=yes&amp;area=default">
+        Try searching for the released version of this page instead?
+    </a>
+</div>
+<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px; position: relative;">
+<a href="../../index.html"><img src="../../_static/logo2.svg" width="540px" border="0" alt="matplotlib"/></a>
 
 <!-- The "Fork me on github" ribbon -->
-<img style="float: right; margin-bottom: -40px; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png" usemap="#ribbonmap"/>
-<map name="ribbonmap">
-    <area shape="poly" coords="15,0,148,-1,148,135" href="https://github.com/matplotlib/matplotlib" title="Fork me on GitHub" />
-</map>
-
-<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
-<a href="../../index.html"><img src="../../_static/logo2.svg" width="540px" border="0" alt="matplotlib"/></a>
+<div id="forkongithub"><a href="https://github.com/matplotlib/matplotlib">Fork me on GitHub</a></div>
 </div>
 
 
@@ -78,12 +80,6 @@ type="text/css" />
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper"><a href="https://www.numfocus.org">
   <image src="https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&amp;colorA=E1523D&amp;colorB=007D8A">
-</a>
-
-<br/>
-
-<a href="http://depsy.org/package/python/matplotlib">
-  <img src="../../_static/depsy_badge.svg">
 </a>
 
 <br/>
@@ -159,7 +155,7 @@ by character code.</p>
 <span class="n">chars</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;&#39;</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">16</span><span class="p">)]</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">16</span><span class="p">)]</span>
 <span class="n">colors</span> <span class="o">=</span> <span class="p">[[(</span><span class="mf">0.95</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">16</span><span class="p">)]</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">16</span><span class="p">)]</span>
 
-<a href="../../api/_as_gen/matplotlib.figure.figaspect.html#matplotlib.figure" title="View documentation for matplotlib.pyplot.figure"><span class="n">plt</span><span class="o">.</span><span class="n">figure</span></a><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">120</span><span class="p">)</span>
+<a href="../../api/_as_gen/matplotlib.pyplot.figure.html#matplotlib.pyplot.figure" title="View documentation for matplotlib.pyplot.figure"><span class="n">plt</span><span class="o">.</span><span class="n">figure</span></a><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">120</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">ccode</span><span class="p">,</span> <span class="n">glyphind</span> <span class="ow">in</span> <span class="n">codes</span><span class="p">:</span>
     <span class="k">if</span> <span class="n">ccode</span> <span class="o">&gt;=</span> <span class="mi">256</span><span class="p">:</span>
         <span class="k">continue</span>
@@ -169,7 +165,7 @@ by character code.</p>
 
 <span class="n">lightgrn</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
 <a href="../../api/_as_gen/matplotlib.pyplot.title.html#matplotlib.pyplot.title" title="View documentation for matplotlib.pyplot.title"><span class="n">plt</span><span class="o">.</span><span class="n">title</span></a><span class="p">(</span><span class="n">fontname</span><span class="p">)</span>
-<span class="n">tab</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="n">cellText</span><span class="o">=</span><span class="n">chars</span><span class="p">,</span>
+<span class="n">tab</span> <span class="o">=</span> <a href="../../api/_as_gen/matplotlib.pyplot.table.html#matplotlib.pyplot.table" title="View documentation for matplotlib.pyplot.table"><span class="n">plt</span><span class="o">.</span><span class="n">table</span></a><span class="p">(</span><span class="n">cellText</span><span class="o">=</span><span class="n">chars</span><span class="p">,</span>
                 <span class="n">rowLabels</span><span class="o">=</span><span class="n">labelr</span><span class="p">,</span>
                 <span class="n">colLabels</span><span class="o">=</span><span class="n">labelc</span><span class="p">,</span>
                 <span class="n">rowColours</span><span class="o">=</span><span class="p">[</span><span class="n">lightgrn</span><span class="p">]</span> <span class="o">*</span> <span class="mi">16</span><span class="p">,</span>
@@ -182,18 +178,17 @@ by character code.</p>
     <span class="n">row</span><span class="p">,</span> <span class="n">col</span> <span class="o">=</span> <span class="n">key</span>
     <span class="k">if</span> <span class="n">row</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">col</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
         <span class="n">cell</span><span class="o">.</span><span class="n">set_text_props</span><span class="p">(</span><span class="n">fontproperties</span><span class="o">=</span><a href="../../api/font_manager_api.html#matplotlib.font_manager.FontProperties" title="View documentation for matplotlib.font_manager.FontProperties"><span class="n">FontProperties</span></a><span class="p">(</span><span class="n">fname</span><span class="o">=</span><span class="n">fontname</span><span class="p">))</span>
-<a href="../../api/axis_api.html#matplotlib.axis" title="View documentation for matplotlib.pyplot.axis"><span class="n">plt</span><span class="o">.</span><span class="n">axis</span></a><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+<a href="../../api/_as_gen/matplotlib.pyplot.axis.html#matplotlib.pyplot.axis" title="View documentation for matplotlib.pyplot.axis"><span class="n">plt</span><span class="o">.</span><span class="n">axis</span></a><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
 <a href="../../api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="View documentation for matplotlib.pyplot.show"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<p><strong>Total running time of the script:</strong> ( 0 minutes  0.000 seconds)</p>
-<div class="sphx-glr-footer container">
-<div class="sphx-glr-download container">
+<div class="sphx-glr-footer docutils container">
+<div class="sphx-glr-download docutils container">
 <a class="reference download internal" href="../../_downloads/font_table_ttf_sgskip.py" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">font_table_ttf_sgskip.py</span></code></a></div>
-<div class="sphx-glr-download container">
+<div class="sphx-glr-download docutils container">
 <a class="reference download internal" href="../../_downloads/font_table_ttf_sgskip.ipynb" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">font_table_ttf_sgskip.ipynb</span></code></a></div>
 </div>
-<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.readthedocs.io">Generated by Sphinx-Gallery</a></p>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.readthedocs.io">Gallery generated by Sphinx-Gallery</a></p>
 </div>
 
 
@@ -205,9 +200,9 @@ by character code.</p>
     </div>
     <div class="footer">
         &copy; Copyright 2002 - 2012 John Hunter, Darren Dale, Eric Firing, Michael Droettboom and the Matplotlib development team; 2012 - 2017 The Matplotlib development team.
-      Last updated on Jul 16, 2017.
+      Last updated on Dec 04, 2017.
       Created using <a
-href="http://sphinx-doc.org/">Sphinx</a> 1.6.2.
+href="http://sphinx-doc.org/">Sphinx</a> 1.6.5.
     </div>
 
 <script>

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>List of changes to Matplotlib prior to 2015 &mdash; Matplotlib 2.0.2.post4416.dev0+g1df513f documentation</title>
+    <title>List of changes to Matplotlib prior to 2015 &mdash; Matplotlib 2.1.0.post986+g1493192 documentation</title>
     
     <link rel="stylesheet" href="../../_static/mpl.css"
 type="text/css" />
@@ -17,7 +17,7 @@ type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '2.0.2.post4416.dev0+g1df513f',
+        VERSION:     '2.1.0.post986+g1493192',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -28,32 +28,34 @@ type="text/css" />
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within Matplotlib 2.0.2.post4416.dev0+g1df513f documentation"
+          title="Search within Matplotlib 2.1.0.post986+g1493192 documentation"
           href="../../_static/opensearch.xml"/>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html"
 />
     <link rel="search" title="Search" href="../../search.html"
 />
-    <link rel="top" title="Matplotlib 2.0.2.post4416.dev0+g1df513f documentation" href="../../index.html" />
-    <link rel="up" title="What’s new in matplotlib" href="../whats_new.html" />
-    <link rel="next" title="GitHub Stats" href="../github_stats.html" />
-    <link rel="prev" title="New in matplotlib 1.5" href="whats_new_1.5.html" /> 
+    <link rel="top" title="Matplotlib 2.1.0.post986+g1493192 documentation" href="../../index.html" />
+    <link rel="up" title="What’s new in Matplotlib" href="../whats_new.html" />
+    <link rel="next" title="New in matplotlib 0.98.4" href="whats_new_0.98.4.html" />
+    <link rel="prev" title="New style colorblind-friendly color cycle" href="../next_whats_new/new_color_cycle.html" /> 
 
 
   </head>
   <body>
 
 
+<div id="unreleased-message">
+    You are reading documentation for the unreleased version of Matplotlib.
+    <a href="https://matplotlib.org/search.html?q=List%20of%20changes%20to%20Matplotlib%20prior%20to%202015&amp;check_keywords=yes&amp;area=default">
+        Try searching for the released version of this page instead?
+    </a>
+</div>
+<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px; position: relative;">
+<a href="../../index.html"><img src="../../_static/logo2.svg" width="540px" border="0" alt="matplotlib"/></a>
 
 <!-- The "Fork me on github" ribbon -->
-<img style="float: right; margin-bottom: -40px; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png" usemap="#ribbonmap"/>
-<map name="ribbonmap">
-    <area shape="poly" coords="15,0,148,-1,148,135" href="https://github.com/matplotlib/matplotlib" title="Fork me on GitHub" />
-</map>
-
-<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
-<a href="../../index.html"><img src="../../_static/logo2.svg" width="540px" border="0" alt="matplotlib"/></a>
+<div id="forkongithub"><a href="https://github.com/matplotlib/matplotlib">Fork me on GitHub</a></div>
 </div>
 
 
@@ -69,10 +71,10 @@ type="text/css" />
           <a href="../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="../github_stats.html" title="GitHub Stats"
+          <a href="whats_new_0.98.4.html" title="New in matplotlib 0.98.4"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="whats_new_1.5.html" title="New in matplotlib 1.5"
+          <a href="../next_whats_new/new_color_cycle.html" title="New style colorblind-friendly color cycle"
              accesskey="P">previous</a> |</li>
 
         <li><a href="../../index.html">home</a>|&nbsp;</li>
@@ -81,7 +83,7 @@ type="text/css" />
         <li><a href="../../api/pyplot_summary.html">pyplot</a>|&nbsp;</li>
         <li><a href="../../contents.html">docs</a> &raquo;</li>
           <li><a href="../index.html" >User’s Guide</a> &raquo;</li>
-          <li><a href="../whats_new.html" accesskey="U">What’s new in matplotlib</a> &raquo;</li> 
+          <li><a href="../whats_new.html" accesskey="U">What’s new in Matplotlib</a> &raquo;</li> 
       </ul>
     </div>
 
@@ -89,12 +91,6 @@ type="text/css" />
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper"><a href="https://www.numfocus.org">
   <image src="https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&amp;colorA=E1523D&amp;colorB=007D8A">
-</a>
-
-<br/>
-
-<a href="http://depsy.org/package/python/matplotlib">
-  <img src="../../_static/depsy_badge.svg">
 </a>
 
 <br/>
@@ -107,9 +103,9 @@ Travis-CI: <a href="https://travis-ci.org/matplotlib/matplotlib">
 <ul>
   <li><a href="../../contents.html">Documentation overview</a><ul>
   <li><a href="../index.html">User’s Guide</a><ul>
-  <li><a href="../whats_new.html">What’s new in matplotlib</a><ul>
-      <li>Previous: <a href="whats_new_1.5.html" title="previous chapter">New in matplotlib 1.5</a></li>
-      <li>Next: <a href="../github_stats.html" title="next chapter">GitHub Stats</a></li>
+  <li><a href="../whats_new.html">What’s new in Matplotlib</a><ul>
+      <li>Previous: <a href="../next_whats_new/new_color_cycle.html" title="previous chapter">New style colorblind-friendly color cycle</a></li>
+      <li>Next: <a href="whats_new_0.98.4.html" title="next chapter">New in matplotlib 0.98.4</a></li>
   </ul></li>
   </ul></li>
   </ul></li>
@@ -4610,9 +4606,9 @@ See examples/legend_demo2.py</li>
     </div>
     <div class="footer">
         &copy; Copyright 2002 - 2012 John Hunter, Darren Dale, Eric Firing, Michael Droettboom and the Matplotlib development team; 2012 - 2017 The Matplotlib development team.
-      Last updated on Jul 16, 2017.
+      Last updated on Dec 04, 2017.
       Created using <a
-href="http://sphinx-doc.org/">Sphinx</a> 1.6.2.
+href="http://sphinx-doc.org/">Sphinx</a> 1.6.5.
     </div>
 
 <script>

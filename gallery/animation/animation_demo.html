@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Animation Demo &mdash; Matplotlib 2.0.2.post4416.dev0+g1df513f documentation</title>
+    <title>pyplot animation &mdash; Matplotlib 2.1.0.post986+g1493192 documentation</title>
     
     <link rel="stylesheet" href="../../_static/mpl.css"
 type="text/css" />
@@ -17,7 +17,7 @@ type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '2.0.2.post4416.dev0+g1df513f',
+        VERSION:     '2.1.0.post986+g1493192',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -28,29 +28,31 @@ type="text/css" />
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within Matplotlib 2.0.2.post4416.dev0+g1df513f documentation"
+          title="Search within Matplotlib 2.1.0.post986+g1493192 documentation"
           href="../../_static/opensearch.xml"/>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html"
 />
     <link rel="search" title="Search" href="../../search.html"
 />
-    <link rel="top" title="Matplotlib 2.0.2.post4416.dev0+g1df513f documentation" href="../../index.html" /> 
+    <link rel="top" title="Matplotlib 2.1.0.post986+g1493192 documentation" href="../../index.html" /> 
 
 
   </head>
   <body>
 
 
+<div id="unreleased-message">
+    You are reading documentation for the unreleased version of Matplotlib.
+    <a href="https://matplotlib.org/search.html?q=pyplot%20animation&amp;check_keywords=yes&amp;area=default">
+        Try searching for the released version of this page instead?
+    </a>
+</div>
+<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px; position: relative;">
+<a href="../../index.html"><img src="../../_static/logo2.svg" width="540px" border="0" alt="matplotlib"/></a>
 
 <!-- The "Fork me on github" ribbon -->
-<img style="float: right; margin-bottom: -40px; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png" usemap="#ribbonmap"/>
-<map name="ribbonmap">
-    <area shape="poly" coords="15,0,148,-1,148,135" href="https://github.com/matplotlib/matplotlib" title="Fork me on GitHub" />
-</map>
-
-<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
-<a href="../../index.html"><img src="../../_static/logo2.svg" width="540px" border="0" alt="matplotlib"/></a>
+<div id="forkongithub"><a href="https://github.com/matplotlib/matplotlib">Fork me on GitHub</a></div>
 </div>
 
 
@@ -78,12 +80,6 @@ type="text/css" />
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper"><a href="https://www.numfocus.org">
   <image src="https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&amp;colorA=E1523D&amp;colorB=007D8A">
-</a>
-
-<br/>
-
-<a href="http://depsy.org/package/python/matplotlib">
-  <img src="../../_static/depsy_badge.svg">
 </a>
 
 <br/>
@@ -122,53 +118,38 @@ Travis-CI: <a href="https://travis-ci.org/matplotlib/matplotlib">
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="animation-demo">
-<span id="sphx-glr-gallery-animation-animation-demo-py"></span><h1>Animation Demo<a class="headerlink" href="#animation-demo" title="Permalink to this headline">¶</a></h1>
-<p>Pyplot animation example.</p>
-<p>The method shown here is only for very simple, low-performance
-use.  For more demanding applications, look at the animation
-module and the examples that use it.</p>
+  <div class="section" id="pyplot-animation">
+<span id="sphx-glr-gallery-animation-animation-demo-py"></span><h1>pyplot animation<a class="headerlink" href="#pyplot-animation" title="Permalink to this headline">¶</a></h1>
+<p>Generating an animation by calling <a class="reference internal" href="../../api/_as_gen/matplotlib.pyplot.pause.html#matplotlib.pyplot.pause" title="matplotlib.pyplot.pause"><code class="xref py py-obj docutils literal"><span class="pre">pause</span></code></a> between plotting commands.</p>
+<p>The method shown here is only suitable for simple, low-performance use.  For
+more demanding applications, look at the <code class="xref py py-mod docutils literal"><span class="pre">animation</span></code> module and the
+examples that use it.</p>
+<p>Note that calling <a class="reference external" href="https://docs.python.org/3/library/time.html#time.sleep" title="(in Python v3.6)"><code class="xref py py-obj docutils literal"><span class="pre">time.sleep</span></code></a> instead of <a class="reference internal" href="../../api/_as_gen/matplotlib.pyplot.pause.html#matplotlib.pyplot.pause" title="matplotlib.pyplot.pause"><code class="xref py py-obj docutils literal"><span class="pre">pause</span></code></a> would <em>not</em> work.</p>
 <img alt="../../_images/sphx_glr_animation_demo_001.png" class="align-center" src="../../_images/sphx_glr_animation_demo_001.png" />
-<p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="n">step</span> <span class="mi">0</span>
-<span class="n">step</span> <span class="mi">1</span>
-<span class="n">step</span> <span class="mi">2</span>
-<span class="n">step</span> <span class="mi">3</span>
-<span class="n">step</span> <span class="mi">4</span>
-</pre></div>
-</div>
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-<span class="n">z</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span><span class="p">[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span>
+<a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.random.seed.html#numpy.random.seed" title="View documentation for numpy.random.seed"><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span></a><span class="p">(</span><span class="mi">19680801</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.random.random.html#numpy.random.random" title="View documentation for numpy.random.random"><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span></a><span class="p">((</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">))</span>
 
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="n">p</span> <span class="o">=</span> <a href="../../api/_as_gen/matplotlib.pyplot.imshow.html#matplotlib.pyplot.imshow" title="View documentation for matplotlib.pyplot.imshow"><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span></a><span class="p">(</span><span class="n">z</span><span class="p">)</span>
-        <span class="n">fig</span> <span class="o">=</span> <a href="../../api/_as_gen/matplotlib.pyplot.gcf.html#matplotlib.pyplot.gcf" title="View documentation for matplotlib.pyplot.gcf"><span class="n">plt</span><span class="o">.</span><span class="n">gcf</span></a><span class="p">()</span>
-        <a href="../../api/_as_gen/matplotlib.pyplot.clim.html#matplotlib.pyplot.clim" title="View documentation for matplotlib.pyplot.clim"><span class="n">plt</span><span class="o">.</span><span class="n">clim</span></a><span class="p">()</span>   <span class="c1"># clamp the color limits</span>
-        <a href="../../api/_as_gen/matplotlib.pyplot.title.html#matplotlib.pyplot.title" title="View documentation for matplotlib.pyplot.title"><span class="n">plt</span><span class="o">.</span><span class="n">title</span></a><span class="p">(</span><span class="s2">&quot;Boring slide show&quot;</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">z</span> <span class="o">=</span> <span class="n">z</span> <span class="o">+</span> <span class="mi">2</span>
-        <span class="n">p</span><span class="o">.</span><span class="n">set_data</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <a href="../../api/_as_gen/matplotlib.pyplot.subplots.html#matplotlib.pyplot.subplots" title="View documentation for matplotlib.pyplot.subplots"><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span></a><span class="p">()</span>
 
-    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;step&quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
-    <a href="../../api/_as_gen/matplotlib.pyplot.pause.html#matplotlib.pyplot.pause" title="View documentation for matplotlib.pyplot.pause"><span class="n">plt</span><span class="o">.</span><span class="n">pause</span></a><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)):</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">cla</span><span class="p">()</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;frame {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+    <span class="c1"># Note that using time.sleep does *not* work here!</span>
+    <a href="../../api/_as_gen/matplotlib.pyplot.pause.html#matplotlib.pyplot.pause" title="View documentation for matplotlib.pyplot.pause"><span class="n">plt</span><span class="o">.</span><span class="n">pause</span></a><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><strong>Total running time of the script:</strong> ( 0 minutes  2.537 seconds)</p>
-<div class="sphx-glr-footer container">
-<div class="sphx-glr-download container">
+<p><strong>Total running time of the script:</strong> ( 0 minutes  8.395 seconds)</p>
+<div class="sphx-glr-footer docutils container">
+<div class="sphx-glr-download docutils container">
 <a class="reference download internal" href="../../_downloads/animation_demo.py" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">animation_demo.py</span></code></a></div>
-<div class="sphx-glr-download container">
+<div class="sphx-glr-download docutils container">
 <a class="reference download internal" href="../../_downloads/animation_demo.ipynb" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">animation_demo.ipynb</span></code></a></div>
 </div>
-<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.readthedocs.io">Generated by Sphinx-Gallery</a></p>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.readthedocs.io">Gallery generated by Sphinx-Gallery</a></p>
 </div>
 
 
@@ -180,9 +161,9 @@ module and the examples that use it.</p>
     </div>
     <div class="footer">
         &copy; Copyright 2002 - 2012 John Hunter, Darren Dale, Eric Firing, Michael Droettboom and the Matplotlib development team; 2012 - 2017 The Matplotlib development team.
-      Last updated on Jul 16, 2017.
+      Last updated on Dec 04, 2017.
       Created using <a
-href="http://sphinx-doc.org/">Sphinx</a> 1.6.2.
+href="http://sphinx-doc.org/">Sphinx</a> 1.6.5.
     </div>
 
 <script>

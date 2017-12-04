@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Poly Editor &mdash; Matplotlib 2.0.2.post4416.dev0+g1df513f documentation</title>
+    <title>Poly Editor &mdash; Matplotlib 2.1.0.post986+g1493192 documentation</title>
     
     <link rel="stylesheet" href="../../_static/mpl.css"
 type="text/css" />
@@ -17,7 +17,7 @@ type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '2.0.2.post4416.dev0+g1df513f',
+        VERSION:     '2.1.0.post986+g1493192',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -28,29 +28,31 @@ type="text/css" />
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within Matplotlib 2.0.2.post4416.dev0+g1df513f documentation"
+          title="Search within Matplotlib 2.1.0.post986+g1493192 documentation"
           href="../../_static/opensearch.xml"/>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html"
 />
     <link rel="search" title="Search" href="../../search.html"
 />
-    <link rel="top" title="Matplotlib 2.0.2.post4416.dev0+g1df513f documentation" href="../../index.html" /> 
+    <link rel="top" title="Matplotlib 2.1.0.post986+g1493192 documentation" href="../../index.html" /> 
 
 
   </head>
   <body>
 
 
+<div id="unreleased-message">
+    You are reading documentation for the unreleased version of Matplotlib.
+    <a href="https://matplotlib.org/search.html?q=Poly%20Editor&amp;check_keywords=yes&amp;area=default">
+        Try searching for the released version of this page instead?
+    </a>
+</div>
+<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px; position: relative;">
+<a href="../../index.html"><img src="../../_static/logo2.svg" width="540px" border="0" alt="matplotlib"/></a>
 
 <!-- The "Fork me on github" ribbon -->
-<img style="float: right; margin-bottom: -40px; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png" usemap="#ribbonmap"/>
-<map name="ribbonmap">
-    <area shape="poly" coords="15,0,148,-1,148,135" href="https://github.com/matplotlib/matplotlib" title="Fork me on GitHub" />
-</map>
-
-<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
-<a href="../../index.html"><img src="../../_static/logo2.svg" width="540px" border="0" alt="matplotlib"/></a>
+<div id="forkongithub"><a href="https://github.com/matplotlib/matplotlib">Fork me on GitHub</a></div>
 </div>
 
 
@@ -78,12 +80,6 @@ type="text/css" />
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper"><a href="https://www.numfocus.org">
   <image src="https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&amp;colorA=E1523D&amp;colorB=007D8A">
-</a>
-
-<br/>
-
-<a href="http://depsy.org/package/python/matplotlib">
-  <img src="../../_static/depsy_badge.svg">
 </a>
 
 <br/>
@@ -135,7 +131,7 @@ Matplotlib event handling to interact with objects on the canvas.</p>
 
 <span class="k">class</span> <span class="nc">PolygonInteractor</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    An polygon editor.</span>
+<span class="sd">    A polygon editor.</span>
 
 <span class="sd">    Key-bindings</span>
 
@@ -152,7 +148,7 @@ Matplotlib event handling to interact with objects on the canvas.</p>
     <span class="n">showverts</span> <span class="o">=</span> <span class="bp">True</span>
     <span class="n">epsilon</span> <span class="o">=</span> <span class="mi">5</span>  <span class="c1"># max pixel distance to count as a vertex hit</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="n">poly</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="n">poly</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">poly</span><span class="o">.</span><span class="n">figure</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s1">&#39;You must first add the polygon to a figure &#39;</span>
                                <span class="s1">&#39;or canvas before defining the interactor&#39;</span><span class="p">)</span>
@@ -180,7 +176,8 @@ Matplotlib event handling to interact with objects on the canvas.</p>
         <span class="bp">self</span><span class="o">.</span><span class="n">background</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">copy_from_bbox</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">bbox</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">draw_artist</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">poly</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">draw_artist</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">line</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">bbox</span><span class="p">)</span>
+        <span class="c1"># do not need to blit here, this will fire before the screen is</span>
+        <span class="c1"># updated</span>
 
     <span class="k">def</span> <span class="nf">poly_changed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">poly</span><span class="p">):</span>
         <span class="s1">&#39;this method is called whenever the polygon object is called&#39;</span>
@@ -193,11 +190,11 @@ Matplotlib event handling to interact with objects on the canvas.</p>
         <span class="s1">&#39;get the index of the vertex under point if within epsilon tolerance&#39;</span>
 
         <span class="c1"># display coords</span>
-        <span class="n">xy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">poly</span><span class="o">.</span><span class="n">xy</span><span class="p">)</span>
+        <span class="n">xy</span> <span class="o">=</span> <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.asarray.html#numpy.asarray" title="View documentation for numpy.asarray"><span class="n">np</span><span class="o">.</span><span class="n">asarray</span></a><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">poly</span><span class="o">.</span><span class="n">xy</span><span class="p">)</span>
         <span class="n">xyt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">poly</span><span class="o">.</span><span class="n">get_transform</span><span class="p">()</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">xy</span><span class="p">)</span>
         <span class="n">xt</span><span class="p">,</span> <span class="n">yt</span> <span class="o">=</span> <span class="n">xyt</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">xyt</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span>
-        <span class="n">d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hypot</span><span class="p">(</span><span class="n">xt</span> <span class="o">-</span> <span class="n">event</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">yt</span> <span class="o">-</span> <span class="n">event</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
-        <span class="n">indseq</span><span class="p">,</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nonzero</span><span class="p">(</span><span class="n">d</span> <span class="o">==</span> <span class="n">d</span><span class="o">.</span><span class="n">min</span><span class="p">())</span>
+        <span class="n">d</span> <span class="o">=</span> <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.hypot.html#numpy.hypot" title="View documentation for numpy.hypot"><span class="n">np</span><span class="o">.</span><span class="n">hypot</span></a><span class="p">(</span><span class="n">xt</span> <span class="o">-</span> <span class="n">event</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">yt</span> <span class="o">-</span> <span class="n">event</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+        <span class="n">indseq</span><span class="p">,</span> <span class="o">=</span> <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.nonzero.html#numpy.nonzero" title="View documentation for numpy.nonzero"><span class="n">np</span><span class="o">.</span><span class="n">nonzero</span></a><span class="p">(</span><span class="n">d</span> <span class="o">==</span> <span class="n">d</span><span class="o">.</span><span class="n">min</span><span class="p">())</span>
         <span class="n">ind</span> <span class="o">=</span> <span class="n">indseq</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
         <span class="k">if</span> <span class="n">d</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">epsilon</span><span class="p">:</span>
@@ -235,9 +232,8 @@ Matplotlib event handling to interact with objects on the canvas.</p>
         <span class="k">elif</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="s1">&#39;d&#39;</span><span class="p">:</span>
             <span class="n">ind</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_ind_under_point</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">ind</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">poly</span><span class="o">.</span><span class="n">xy</span> <span class="o">=</span> <span class="p">[</span><span class="n">tup</span>
-                                <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">tup</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">poly</span><span class="o">.</span><span class="n">xy</span><span class="p">)</span>
-                                <span class="k">if</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">ind</span><span class="p">]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">poly</span><span class="o">.</span><span class="n">xy</span> <span class="o">=</span> <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.delete.html#numpy.delete" title="View documentation for numpy.delete"><span class="n">np</span><span class="o">.</span><span class="n">delete</span></a><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">poly</span><span class="o">.</span><span class="n">xy</span><span class="p">,</span>
+                                         <span class="n">ind</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">line</span><span class="o">.</span><span class="n">set_data</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">poly</span><span class="o">.</span><span class="n">xy</span><span class="p">))</span>
         <span class="k">elif</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="s1">&#39;i&#39;</span><span class="p">:</span>
             <span class="n">xys</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">poly</span><span class="o">.</span><span class="n">get_transform</span><span class="p">()</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">poly</span><span class="o">.</span><span class="n">xy</span><span class="p">)</span>
@@ -247,14 +243,14 @@ Matplotlib event handling to interact with objects on the canvas.</p>
                 <span class="n">s1</span> <span class="o">=</span> <span class="n">xys</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
                 <span class="n">d</span> <span class="o">=</span> <a href="../../api/mlab_api.html#matplotlib.mlab.dist_point_to_segment" title="View documentation for matplotlib.mlab.dist_point_to_segment"><span class="n">dist_point_to_segment</span></a><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">s0</span><span class="p">,</span> <span class="n">s1</span><span class="p">)</span>
                 <span class="k">if</span> <span class="n">d</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">epsilon</span><span class="p">:</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">poly</span><span class="o">.</span><span class="n">xy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
-                        <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">poly</span><span class="o">.</span><span class="n">xy</span><span class="p">[:</span><span class="n">i</span><span class="p">])</span> <span class="o">+</span>
-                        <span class="p">[(</span><span class="n">event</span><span class="o">.</span><span class="n">xdata</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">ydata</span><span class="p">)]</span> <span class="o">+</span>
-                        <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">poly</span><span class="o">.</span><span class="n">xy</span><span class="p">[</span><span class="n">i</span><span class="p">:]))</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">poly</span><span class="o">.</span><span class="n">xy</span> <span class="o">=</span> <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.insert.html#numpy.insert" title="View documentation for numpy.insert"><span class="n">np</span><span class="o">.</span><span class="n">insert</span></a><span class="p">(</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">poly</span><span class="o">.</span><span class="n">xy</span><span class="p">,</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span>
+                        <span class="p">[</span><span class="n">event</span><span class="o">.</span><span class="n">xdata</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">ydata</span><span class="p">],</span>
+                        <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
                     <span class="bp">self</span><span class="o">.</span><span class="n">line</span><span class="o">.</span><span class="n">set_data</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">poly</span><span class="o">.</span><span class="n">xy</span><span class="p">))</span>
                     <span class="k">break</span>
-
-        <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">line</span><span class="o">.</span><span class="n">stale</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">draw_idle</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">motion_notify_callback</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
         <span class="s1">&#39;on mouse movement&#39;</span>
@@ -281,15 +277,15 @@ Matplotlib event handling to interact with objects on the canvas.</p>
         <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">bbox</span><span class="p">)</span>
 
 
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
     <span class="kn">from</span> <span class="nn">matplotlib.patches</span> <span class="kn">import</span> <a href="../../api/_as_gen/matplotlib.patches.Polygon.html#matplotlib.patches.Polygon" title="View documentation for matplotlib.patches.Polygon"><span class="n">Polygon</span></a>
 
-    <span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
+    <span class="n">theta</span> <span class="o">=</span> <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.arange.html#numpy.arange" title="View documentation for numpy.arange"><span class="n">np</span><span class="o">.</span><span class="n">arange</span></a><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
     <span class="n">r</span> <span class="o">=</span> <span class="mf">1.5</span>
 
-    <span class="n">xs</span> <span class="o">=</span> <span class="n">r</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
-    <span class="n">ys</span> <span class="o">=</span> <span class="n">r</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+    <span class="n">xs</span> <span class="o">=</span> <span class="n">r</span><span class="o">*</span><a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.cos.html#numpy.cos" title="View documentation for numpy.cos"><span class="n">np</span><span class="o">.</span><span class="n">cos</span></a><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+    <span class="n">ys</span> <span class="o">=</span> <span class="n">r</span><span class="o">*</span><a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.sin.html#numpy.sin" title="View documentation for numpy.sin"><span class="n">np</span><span class="o">.</span><span class="n">sin</span></a><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
 
     <span class="n">poly</span> <span class="o">=</span> <a href="../../api/_as_gen/matplotlib.patches.Polygon.html#matplotlib.patches.Polygon" title="View documentation for matplotlib.patches.Polygon"><span class="n">Polygon</span></a><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">)),</span> <span class="n">animated</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 
@@ -303,14 +299,13 @@ Matplotlib event handling to interact with objects on the canvas.</p>
     <a href="../../api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="View documentation for matplotlib.pyplot.show"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<p><strong>Total running time of the script:</strong> ( 0 minutes  0.035 seconds)</p>
-<div class="sphx-glr-footer container">
-<div class="sphx-glr-download container">
+<div class="sphx-glr-footer docutils container">
+<div class="sphx-glr-download docutils container">
 <a class="reference download internal" href="../../_downloads/poly_editor.py" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">poly_editor.py</span></code></a></div>
-<div class="sphx-glr-download container">
+<div class="sphx-glr-download docutils container">
 <a class="reference download internal" href="../../_downloads/poly_editor.ipynb" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">poly_editor.ipynb</span></code></a></div>
 </div>
-<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.readthedocs.io">Generated by Sphinx-Gallery</a></p>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.readthedocs.io">Gallery generated by Sphinx-Gallery</a></p>
 </div>
 
 
@@ -322,9 +317,9 @@ Matplotlib event handling to interact with objects on the canvas.</p>
     </div>
     <div class="footer">
         &copy; Copyright 2002 - 2012 John Hunter, Darren Dale, Eric Firing, Michael Droettboom and the Matplotlib development team; 2012 - 2017 The Matplotlib development team.
-      Last updated on Jul 16, 2017.
+      Last updated on Dec 04, 2017.
       Created using <a
-href="http://sphinx-doc.org/">Sphinx</a> 1.6.2.
+href="http://sphinx-doc.org/">Sphinx</a> 1.6.5.
     </div>
 
 <script>

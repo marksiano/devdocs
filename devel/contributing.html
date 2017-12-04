@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Contributing &mdash; Matplotlib 2.0.2.post4416.dev0+g1df513f documentation</title>
+    <title>Contributing &mdash; Matplotlib 2.1.0.post986+g1493192 documentation</title>
     
     <link rel="stylesheet" href="../_static/mpl.css"
 type="text/css" />
@@ -17,7 +17,7 @@ type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '2.0.2.post4416.dev0+g1df513f',
+        VERSION:     '2.1.0.post986+g1493192',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -28,14 +28,14 @@ type="text/css" />
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within Matplotlib 2.0.2.post4416.dev0+g1df513f documentation"
+          title="Search within Matplotlib 2.1.0.post986+g1493192 documentation"
           href="../_static/opensearch.xml"/>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html"
 />
     <link rel="search" title="Search" href="../search.html"
 />
-    <link rel="top" title="Matplotlib 2.0.2.post4416.dev0+g1df513f documentation" href="../index.html" />
+    <link rel="top" title="Matplotlib 2.1.0.post986+g1493192 documentation" href="../index.html" />
     <link rel="up" title="The Matplotlib Developers’ Guide" href="index.html" />
     <link rel="next" title="Developer’s tips for testing" href="testing.html" />
     <link rel="prev" title="The Matplotlib Developers’ Guide" href="index.html" /> 
@@ -45,15 +45,17 @@ type="text/css" />
   <body>
 
 
+<div id="unreleased-message">
+    You are reading documentation for the unreleased version of Matplotlib.
+    <a href="https://matplotlib.org/search.html?q=Contributing&amp;check_keywords=yes&amp;area=default">
+        Try searching for the released version of this page instead?
+    </a>
+</div>
+<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px; position: relative;">
+<a href="../index.html"><img src="../_static/logo2.svg" width="540px" border="0" alt="matplotlib"/></a>
 
 <!-- The "Fork me on github" ribbon -->
-<img style="float: right; margin-bottom: -40px; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png" usemap="#ribbonmap"/>
-<map name="ribbonmap">
-    <area shape="poly" coords="15,0,148,-1,148,135" href="https://github.com/matplotlib/matplotlib" title="Fork me on GitHub" />
-</map>
-
-<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
-<a href="../index.html"><img src="../_static/logo2.svg" width="540px" border="0" alt="matplotlib"/></a>
+<div id="forkongithub"><a href="https://github.com/matplotlib/matplotlib">Fork me on GitHub</a></div>
 </div>
 
 
@@ -92,12 +94,6 @@ type="text/css" />
 
 <br/>
 
-<a href="http://depsy.org/package/python/matplotlib">
-  <img src="../_static/depsy_badge.svg">
-</a>
-
-<br/>
-
 Travis-CI: <a href="https://travis-ci.org/matplotlib/matplotlib">
   <img src="https://travis-ci.org/matplotlib/matplotlib.svg?branch=master"/>
 </a>
@@ -106,7 +102,11 @@ Travis-CI: <a href="https://travis-ci.org/matplotlib/matplotlib">
   <ul>
 <li><a class="reference internal" href="#">Contributing</a><ul>
 <li><a class="reference internal" href="#submitting-a-bug-report">Submitting a bug report</a></li>
-<li><a class="reference internal" href="#retrieving-and-installing-the-latest-version-of-the-code">Retrieving and installing the latest version of the code</a></li>
+<li><a class="reference internal" href="#retrieving-and-installing-the-latest-version-of-the-code">Retrieving and installing the latest version of the code</a><ul>
+<li><a class="reference internal" href="#building-matplotlib-for-image-comparison-tests">Building Matplotlib for image comparison tests</a></li>
+<li><a class="reference internal" href="#installing-matplotlib-in-developer-mode">Installing Matplotlib in developer mode</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#contributing-code">Contributing code</a><ul>
 <li><a class="reference internal" href="#how-to-contribute">How to contribute</a></li>
 <li><a class="reference internal" href="#contributing-pull-requests">Contributing pull requests</a></li>
@@ -118,6 +118,10 @@ Travis-CI: <a href="https://travis-ci.org/matplotlib/matplotlib">
 <li><a class="reference internal" href="#new-modules-and-files-installation">New modules and files: installation</a></li>
 <li><a class="reference internal" href="#c-c-extensions">C/C++ extensions</a></li>
 <li><a class="reference internal" href="#keyword-argument-processing">Keyword argument processing</a></li>
+<li><a class="reference internal" href="#using-logging-for-debug-messages">Using logging for debug messages</a><ul>
+<li><a class="reference internal" href="#which-logging-level-to-use">Which logging level to use?</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#developing-a-new-backend">Developing a new backend</a></li>
 <li><a class="reference internal" href="#writing-examples">Writing examples</a></li>
 </ul>
@@ -203,42 +207,56 @@ use to organize this information.</p>
 <p>Thank you for your help in keeping bug reports complete, targeted and descriptive.</p>
 </div>
 <div class="section" id="retrieving-and-installing-the-latest-version-of-the-code">
-<h2>Retrieving and installing the latest version of the code<a class="headerlink" href="#retrieving-and-installing-the-latest-version-of-the-code" title="Permalink to this headline">¶</a></h2>
-<p>When working on the Matplotlib source, setting up a <a class="reference external" href="http://docs.python-guide.org/en/latest/dev/virtualenvs/">virtual
-environment</a> or a
-<a class="reference external" href="http://conda.pydata.org/docs/using/envs.html">conda environment</a> is
-recommended.</p>
+<span id="installing-for-devs"></span><h2>Retrieving and installing the latest version of the code<a class="headerlink" href="#retrieving-and-installing-the-latest-version-of-the-code" title="Permalink to this headline">¶</a></h2>
+<p>When developing Matplotlib, sources must be downloaded, built, and installed into
+a local environment on your machine.</p>
+<p>Follow the instructions detailed <a class="reference internal" href="../users/installing.html#install-from-source"><span class="std std-ref">here</span></a> to set up your
+environment to build Matplotlib from source.</p>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
-<p class="last">If you already have a version of Matplotlib installed, use an
-virtual environment or uninstall using the same method you used
-to install it.  Installing multiple versions of Matplotlib via different
-methods into the same environment may not always work as expected.</p>
+<p class="last">When working on Matplotlib sources, having multiple versions installed by
+different methods into the same environment may not always work as expected.</p>
 </div>
+<p>To work on Matplotlib sources, it is strongly recommended to set up an alternative
+development environment, using the something like <a class="reference external" href="http://docs.python-guide.org/en/latest/dev/virtualenvs/">virtual environments in python</a>, or a
+<a class="reference external" href="http://conda.pydata.org/docs/using/envs.html">conda environment</a>.</p>
+<p>If you choose to use an already existing environment, and not a clean virtual or
+conda environment, uninstall the current version of Matplotlib in that enviroment
+using the same method used to install it.</p>
+<p>If working on Matplotlib documentation only, the above steps are <em>not</em> absolutely
+necessary.</p>
 <p>We use <a class="reference external" href="https://git-scm.com/">Git</a> for version control and
 <a class="reference external" href="https://github.com/">GitHub</a> for hosting our main repository.</p>
 <p>You can check out the latest sources with the command (see
 <a class="reference internal" href="gitwash/set_up_fork.html#set-up-fork"><span class="std std-ref">Set up your fork</span></a> for more details):</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="n">matplotlib</span><span class="o">/</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">git</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">matplotlib</span><span class="o">/</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">git</span>
 </pre></div>
 </div>
 <p>and navigate to the <code class="file docutils literal"><span class="pre">matplotlib</span></code> directory. If you have the proper privileges,
 you can use <code class="docutils literal"><span class="pre">git&#64;</span></code> instead of  <code class="docutils literal"><span class="pre">https://</span></code>, which works through the ssh protocol
 and might be easier to use if you are using 2-factor authentication.</p>
-<p>To make sure the tests run locally you must build against the correct version
-of freetype.  To configure the build system to fetch and build it either export
-the env <code class="docutils literal"><span class="pre">MPLLOCALFREETYPE</span></code> as:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">MPLLOCALFREETYPE</span><span class="o">=</span><span class="mi">1</span>
-</pre></div>
-</div>
-<p>or copy <code class="file docutils literal"><span class="pre">setup.cfg.template</span></code> to <code class="file docutils literal"><span class="pre">setup.cfg</span></code> and edit it to contain</p>
+<div class="section" id="building-matplotlib-for-image-comparison-tests">
+<h3>Building Matplotlib for image comparison tests<a class="headerlink" href="#building-matplotlib-for-image-comparison-tests" title="Permalink to this headline">¶</a></h3>
+<p>Matplotlib’s test suite makes heavy use of image comparison tests,
+meaning the result of a plot is compared against a known good result.
+Unfortunately, different versions of FreeType produce differently
+formed characters, causing these image comparisons to fail.  To make
+them reproducible, Matplotlib can be built with a special local copy
+of FreeType.  This is recommended for all Matplotlib developers.</p>
+<p>Copy <code class="file docutils literal"><span class="pre">setup.cfg.template</span></code> to <code class="file docutils literal"><span class="pre">setup.cfg</span></code> and edit it to contain:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">test</span><span class="p">]</span>
 <span class="n">local_freetype</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">tests</span> <span class="o">=</span> <span class="kc">True</span>
 </pre></div>
 </div>
+<p>or set the <code class="docutils literal"><span class="pre">MPLLOCALFREETYPE</span></code> environmental variable to any true
+value.</p>
+</div>
+<div class="section" id="installing-matplotlib-in-developer-mode">
+<h3>Installing Matplotlib in developer mode<a class="headerlink" href="#installing-matplotlib-in-developer-mode" title="Permalink to this headline">¶</a></h3>
 <p>To install Matplotlib (and compile the c-extensions) run the following
 command from the top-level directory</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">v</span> <span class="o">-</span><span class="n">e</span> <span class="o">./</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">mpip</span> <span class="n">install</span> <span class="o">-</span><span class="n">ve</span> <span class="o">.</span>
 </pre></div>
 </div>
 <p>This installs Matplotlib in ‘editable/develop mode’, i.e., builds
@@ -246,14 +264,14 @@ everything and places the correct link entries in the install
 directory so that python will be able to import Matplotlib from the
 source directory.  Thus, any changes to the <code class="docutils literal"><span class="pre">*.py</span></code> files will be
 reflected the next time you import the library.  If you change the
-c-extension source (which might happen if you change branches) you
-will need to run:</p>
+C-extension source (which might happen if you change branches) you
+will need to run</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">build</span>
 </pre></div>
 </div>
-<p>or re-run <code class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-v</span> <span class="pre">-e</span> <span class="pre">./</span></code>.</p>
+<p>or re-run <code class="docutils literal"><span class="pre">python</span> <span class="pre">-mpip</span> <span class="pre">install</span> <span class="pre">-ve</span> <span class="pre">.</span></code>.</p>
 <p>Alternatively, if you do</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">v</span> <span class="o">./</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">mpip</span> <span class="n">install</span> <span class="o">-</span><span class="n">v</span> <span class="o">.</span>
 </pre></div>
 </div>
 <p>all of the files will be copied to the installation directory however,
@@ -282,13 +300,17 @@ environment is set up properly:</p>
 </ul>
 </div>
 </div>
+</div>
 <div class="section" id="contributing-code">
 <h2>Contributing code<a class="headerlink" href="#contributing-code" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="how-to-contribute">
 <h3>How to contribute<a class="headerlink" href="#how-to-contribute" title="Permalink to this headline">¶</a></h3>
 <p>The preferred way to contribute to Matplotlib is to fork the <a class="reference external" href="https://github.com/matplotlib/matplotlib/">main
 repository</a> on GitHub,
-then submit a “pull request” (PR):</p>
+then submit a “pull request” (PR).</p>
+<p>The best practices for using GitHub to make PRs to Matplotlib are
+documented in the <a class="reference internal" href="gitwash/development_workflow.html#development-workflow"><span class="std std-ref">Development workflow</span></a> section.</p>
+<p>A brief overview is:</p>
 <blockquote>
 <div><ol class="arabic">
 <li><p class="first"><a class="reference external" href="https://github.com/join">Create an account</a> on
@@ -299,7 +321,7 @@ near the top of the page. This creates a copy of the code under your
 account on the GitHub server.</p>
 </li>
 <li><p class="first">Clone this copy to your local disk:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ git clone https://github.com:YourLogin/matplotlib.git
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ git clone https://github.com/YourLogin/matplotlib.git
 </pre></div>
 </div>
 </li>
@@ -393,13 +415,13 @@ tools:</p>
 <div><ul>
 <li><p class="first">Code with a good unittest coverage (at least 70%, better 100%), check
 with:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">coverage</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">mpip</span> <span class="n">install</span> <span class="n">coverage</span>
 <span class="n">python</span> <span class="n">tests</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="k">with</span><span class="o">-</span><span class="n">coverage</span>
 </pre></div>
 </div>
 </li>
 <li><p class="first">No pyflakes warnings, check with:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">pyflakes</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">mpip</span> <span class="n">install</span> <span class="n">pyflakes</span>
 <span class="n">pyflakes</span> <span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">module</span><span class="o">.</span><span class="n">py</span>
 </pre></div>
 </div>
@@ -418,7 +440,7 @@ direction.</p>
 <ul class="last simple">
 <li><a class="reference internal" href="#coding-guidelines"><span class="std std-ref">Coding guidelines</span></a></li>
 <li><a class="reference internal" href="testing.html#testing"><span class="std std-ref">Developer’s tips for testing</span></a></li>
-<li><a class="reference internal" href="documenting_mpl.html#documenting-matplotlib"><span class="std std-ref">Developer’s tips for documenting matplotlib</span></a></li>
+<li><a class="reference internal" href="documenting_mpl.html#documenting-matplotlib"><span class="std std-ref">Writing documentation</span></a></li>
 </ul>
 </div>
 </div>
@@ -498,7 +520,7 @@ illustration) just passes them on to the
 <a class="reference internal" href="../api/_as_gen/matplotlib.artist.Artist.update.html#matplotlib.artist.Artist.update" title="matplotlib.artist.Artist.update"><code class="xref py py-meth docutils literal"><span class="pre">matplotlib.artist.Artist.update()</span></code></a> method:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># in text.py</span>
 <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="n">Artist</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+    <span class="n">Artist</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -550,10 +572,65 @@ forced to use <code class="docutils literal"><span class="pre">**kwargs</span></
 </pre></div>
 </div>
 </div>
+<div class="section" id="using-logging-for-debug-messages">
+<span id="using-logging"></span><h3>Using logging for debug messages<a class="headerlink" href="#using-logging-for-debug-messages" title="Permalink to this headline">¶</a></h3>
+<p>Matplotlib uses the standard python <a class="reference external" href="https://docs.python.org/3/library/logging.html#module-logging" title="(in Python v3.6)"><code class="xref py py-obj docutils literal"><span class="pre">logging</span></code></a> library to write verbose
+warnings, information, and
+debug messages.  Please use it!  In all those places you write <a class="reference external" href="https://docs.python.org/3/library/functions.html#print" title="(in Python v3.6)"><code class="xref py py-func docutils literal"><span class="pre">print()</span></code></a>
+statements to do your debugging, try using <code class="xref py py-func docutils literal"><span class="pre">log.debug()</span></code> instead!</p>
+<p>To include <a class="reference external" href="https://docs.python.org/3/library/logging.html#module-logging" title="(in Python v3.6)"><code class="xref py py-obj docutils literal"><span class="pre">logging</span></code></a> in your module, at the top of the module, you need to
+<code class="docutils literal"><span class="pre">import</span> <span class="pre">logging</span></code>.  Then calls in your code like:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">_log</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>  <span class="c1"># right after the imports</span>
+
+<span class="c1"># code</span>
+<span class="c1"># more code</span>
+<span class="n">_log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Here is some information&#39;</span><span class="p">)</span>
+<span class="n">_log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;Here is some more detailed information&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>will log to a logger named <code class="docutils literal"><span class="pre">matplotlib.yourmodulename</span></code>.</p>
+<p>If an end-user of Matplotlib sets up <a class="reference external" href="https://docs.python.org/3/library/logging.html#module-logging" title="(in Python v3.6)"><code class="xref py py-obj docutils literal"><span class="pre">logging</span></code></a> to display at levels
+more verbose than <code class="xref py py-obj docutils literal"><span class="pre">logger.WARNING</span></code> in their code as follows:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
+<span class="n">fmt</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%(name)s</span><span class="s1">:</span><span class="si">%(lineno)5d</span><span class="s1"> - </span><span class="si">%(levelname)s</span><span class="s1"> - </span><span class="si">%(message)s</span><span class="s1">&#39;</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="n">fmt</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+<p>Then they will receive messages like:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">matplotlib</span><span class="o">.</span><span class="n">backends</span><span class="p">:</span>   <span class="mi">89</span> <span class="o">-</span> <span class="n">INFO</span> <span class="o">-</span> <span class="n">backend</span> <span class="n">MacOSX</span> <span class="n">version</span> <span class="n">unknown</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">yourmodulename</span><span class="p">:</span> <span class="mi">347</span> <span class="o">-</span> <span class="n">INFO</span> <span class="o">-</span> <span class="n">Here</span> <span class="ow">is</span> <span class="n">some</span> <span class="n">information</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">yourmodulename</span><span class="p">:</span> <span class="mi">348</span> <span class="o">-</span> <span class="n">DEBUG</span> <span class="o">-</span> <span class="n">Here</span> <span class="ow">is</span> <span class="n">some</span> <span class="n">more</span> <span class="n">detailed</span> <span class="n">information</span>
+</pre></div>
+</div>
+<div class="section" id="which-logging-level-to-use">
+<h4>Which logging level to use?<a class="headerlink" href="#which-logging-level-to-use" title="Permalink to this headline">¶</a></h4>
+<p>There are five levels at which you can emit messages.
+<a class="reference external" href="https://docs.python.org/3/library/logging.html#logging.critical" title="(in Python v3.6)"><code class="xref py py-obj docutils literal"><span class="pre">logging.critical</span></code></a> and <a class="reference external" href="https://docs.python.org/3/library/logging.html#logging.error" title="(in Python v3.6)"><code class="xref py py-obj docutils literal"><span class="pre">logging.error</span></code></a>
+are really only there for errors that will end the use of the library but
+not kill the interpreter.  <a class="reference external" href="https://docs.python.org/3/library/logging.html#logging.warning" title="(in Python v3.6)"><code class="xref py py-obj docutils literal"><span class="pre">logging.warning</span></code></a> overlaps with the
+<code class="docutils literal"><span class="pre">warnings</span></code> library.  The
+<a class="reference external" href="https://docs.python.org/3/howto/logging.html#logging-basic-tutorial">logging tutorial</a>
+suggests that the difference
+between <a class="reference external" href="https://docs.python.org/3/library/logging.html#logging.warning" title="(in Python v3.6)"><code class="xref py py-obj docutils literal"><span class="pre">logging.warning</span></code></a> and <a class="reference external" href="https://docs.python.org/3/library/warnings.html#warnings.warn" title="(in Python v3.6)"><code class="xref py py-obj docutils literal"><span class="pre">warnings.warn</span></code></a> is that
+<a class="reference external" href="https://docs.python.org/3/library/warnings.html#warnings.warn" title="(in Python v3.6)"><code class="xref py py-obj docutils literal"><span class="pre">warnings.warn</span></code></a> be used for things the user must change to stop
+the warning, whereas <a class="reference external" href="https://docs.python.org/3/library/logging.html#logging.warning" title="(in Python v3.6)"><code class="xref py py-obj docutils literal"><span class="pre">logging.warning</span></code></a> can be more persistent.</p>
+<p>By default, <a class="reference external" href="https://docs.python.org/3/library/logging.html#module-logging" title="(in Python v3.6)"><code class="xref py py-obj docutils literal"><span class="pre">logging</span></code></a> displays all log messages at levels higher than
+<code class="xref py py-obj docutils literal"><span class="pre">logging.WARNING</span></code> to <a class="reference external" href="https://docs.python.org/3/library/sys.html#sys.stderr" title="(in Python v3.6)"><code class="xref py py-obj docutils literal"><span class="pre">sys.stderr</span></code></a>.</p>
+<p>Calls to <a class="reference external" href="https://docs.python.org/3/library/logging.html#logging.info" title="(in Python v3.6)"><code class="xref py py-obj docutils literal"><span class="pre">logging.info</span></code></a> are not displayed by default.  They are for
+information that the user may want to know if the program behaves oddly.
+For instance, if an object isn’t drawn because its position is <code class="docutils literal"><span class="pre">NaN</span></code>,
+that can usually be ignored, but a mystified user could set
+<code class="docutils literal"><span class="pre">logging.basicConfig(level=logging.INFO)</span></code> and get an error message that
+says why.</p>
+<p><a class="reference external" href="https://docs.python.org/3/library/logging.html#logging.debug" title="(in Python v3.6)"><code class="xref py py-obj docutils literal"><span class="pre">logging.debug</span></code></a> is the least likely to be displayed, and hence can
+be the most verbose.</p>
+</div>
+</div>
 <div class="section" id="developing-a-new-backend">
 <span id="custom-backend"></span><h3>Developing a new backend<a class="headerlink" href="#developing-a-new-backend" title="Permalink to this headline">¶</a></h3>
 <p>If you are working on a custom backend, the <em>backend</em> setting in
-<code class="file docutils literal"><span class="pre">matplotlibrc</span></code> (<a class="reference internal" href="../tutorials/01_introductory/customizing.html#sphx-glr-tutorials-01-introductory-customizing-py"><span class="std std-ref">Customizing matplotlib</span></a>) supports an
+<code class="file docutils literal"><span class="pre">matplotlibrc</span></code> (<a class="reference internal" href="../tutorials/introductory/customizing.html#sphx-glr-tutorials-introductory-customizing-py"><span class="std std-ref">Customizing matplotlib</span></a>) supports an
 external backend via the <code class="docutils literal"><span class="pre">module</span></code> directive.  If
 <code class="file docutils literal"><span class="pre">my_backend.py</span></code> is a Matplotlib backend in your
 <span class="target" id="index-0"></span><a class="reference internal" href="../faq/environment_variables_faq.html#envvar-PYTHONPATH"><code class="xref std std-envvar docutils literal"><span class="pre">PYTHONPATH</span></code></a>, you can set it on one of several ways</p>
@@ -603,9 +680,9 @@ example code you can load it into a file handle with:</p>
     </div>
     <div class="footer">
         &copy; Copyright 2002 - 2012 John Hunter, Darren Dale, Eric Firing, Michael Droettboom and the Matplotlib development team; 2012 - 2017 The Matplotlib development team.
-      Last updated on Jul 16, 2017.
+      Last updated on Dec 04, 2017.
       Created using <a
-href="http://sphinx-doc.org/">Sphinx</a> 1.6.2.
+href="http://sphinx-doc.org/">Sphinx</a> 1.6.5.
     </div>
 
 <script>

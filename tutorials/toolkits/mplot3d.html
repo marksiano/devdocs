@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>The mplot3d Toolkit &mdash; Matplotlib 2.0.2.post4416.dev0+g1df513f documentation</title>
+    <title>The mplot3d Toolkit &mdash; Matplotlib 2.1.0.post986+g1493192 documentation</title>
     
     <link rel="stylesheet" href="../../_static/mpl.css"
 type="text/css" />
@@ -17,7 +17,7 @@ type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '2.0.2.post4416.dev0+g1df513f',
+        VERSION:     '2.1.0.post986+g1493192',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -28,29 +28,34 @@ type="text/css" />
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within Matplotlib 2.0.2.post4416.dev0+g1df513f documentation"
+          title="Search within Matplotlib 2.1.0.post986+g1493192 documentation"
           href="../../_static/opensearch.xml"/>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html"
 />
     <link rel="search" title="Search" href="../../search.html"
 />
-    <link rel="top" title="Matplotlib 2.0.2.post4416.dev0+g1df513f documentation" href="../../index.html" /> 
+    <link rel="top" title="Matplotlib 2.1.0.post986+g1493192 documentation" href="../../index.html" />
+    <link rel="up" title="Tutorials" href="../index.html" />
+    <link rel="next" title="Overview of axisartist toolkit" href="axisartist.html" />
+    <link rel="prev" title="Text in Matplotlib Plots" href="../text/text_intro.html" /> 
 
 
   </head>
   <body>
 
 
+<div id="unreleased-message">
+    You are reading documentation for the unreleased version of Matplotlib.
+    <a href="https://matplotlib.org/search.html?q=The%20mplot3d%20Toolkit&amp;check_keywords=yes&amp;area=default">
+        Try searching for the released version of this page instead?
+    </a>
+</div>
+<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px; position: relative;">
+<a href="../../index.html"><img src="../../_static/logo2.svg" width="540px" border="0" alt="matplotlib"/></a>
 
 <!-- The "Fork me on github" ribbon -->
-<img style="float: right; margin-bottom: -40px; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png" usemap="#ribbonmap"/>
-<map name="ribbonmap">
-    <area shape="poly" coords="15,0,148,-1,148,135" href="https://github.com/matplotlib/matplotlib" title="Fork me on GitHub" />
-</map>
-
-<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
-<a href="../../index.html"><img src="../../_static/logo2.svg" width="540px" border="0" alt="matplotlib"/></a>
+<div id="forkongithub"><a href="https://github.com/matplotlib/matplotlib">Fork me on GitHub</a></div>
 </div>
 
 
@@ -65,12 +70,20 @@ type="text/css" />
         <li class="right" >
           <a href="../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
+        <li class="right" >
+          <a href="axisartist.html" title="Overview of axisartist toolkit"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../text/text_intro.html" title="Text in Matplotlib Plots"
+             accesskey="P">previous</a> |</li>
 
         <li><a href="../../index.html">home</a>|&nbsp;</li>
         <li><a href="../../gallery/index.html">examples</a>|&nbsp;</li>
         <li><a href="../index.html">tutorials</a>|&nbsp;</li>
         <li><a href="../../api/pyplot_summary.html">pyplot</a>|&nbsp;</li>
-        <li><a href="../../contents.html">docs</a> &raquo;</li> 
+        <li><a href="../../contents.html">docs</a> &raquo;</li>
+          <li><a href="../../users/index.html" >User’s Guide</a> &raquo;</li>
+          <li><a href="../index.html" accesskey="U">Tutorials</a> &raquo;</li> 
       </ul>
     </div>
 
@@ -78,12 +91,6 @@ type="text/css" />
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper"><a href="https://www.numfocus.org">
   <image src="https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&amp;colorA=E1523D&amp;colorB=007D8A">
-</a>
-
-<br/>
-
-<a href="http://depsy.org/package/python/matplotlib">
-  <img src="../../_static/depsy_badge.svg">
 </a>
 
 <br/>
@@ -118,6 +125,12 @@ Travis-CI: <a href="https://travis-ci.org/matplotlib/matplotlib">
 <h3>Related Topics</h3>
 <ul>
   <li><a href="../../contents.html">Documentation overview</a><ul>
+  <li><a href="../../users/index.html">User’s Guide</a><ul>
+  <li><a href="../index.html">Tutorials</a><ul>
+      <li>Previous: <a href="../text/text_intro.html" title="previous chapter">Text in Matplotlib Plots</a></li>
+      <li>Next: <a href="axisartist.html" title="next chapter">Overview of axisartist toolkit</a></li>
+  </ul></li>
+  </ul></li>
   </ul></li>
 </ul>
 </div>
@@ -239,7 +252,7 @@ when plotting a 2D set.</td>
 <span id="scatter3d"></span><h3>Scatter plots<a class="headerlink" href="#scatter-plots" title="Permalink to this headline">¶</a></h3>
 <dl class="method">
 <dt id="mpl_toolkits.mplot3d.Axes3D.scatter">
-<code class="descclassname">Axes3D.</code><code class="descname">scatter</code><span class="sig-paren">(</span><em>xs</em>, <em>ys</em>, <em>zs=0</em>, <em>zdir=’z’</em>, <em>s=20</em>, <em>c=None</em>, <em>depthshade=True</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#mpl_toolkits.mplot3d.Axes3D.scatter" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">Axes3D.</code><code class="descname">scatter</code><span class="sig-paren">(</span><em>xs</em>, <em>ys</em>, <em>zs=0</em>, <em>zdir='z'</em>, <em>s=20</em>, <em>c=None</em>, <em>depthshade=True</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#mpl_toolkits.mplot3d.Axes3D.scatter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a scatter plot.</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -301,63 +314,52 @@ the appearance of depth. Default is <em>True</em>.</td>
 <dl class="method">
 <dt id="mpl_toolkits.mplot3d.Axes3D.plot_wireframe">
 <code class="descclassname">Axes3D.</code><code class="descname">plot_wireframe</code><span class="sig-paren">(</span><em>X</em>, <em>Y</em>, <em>Z</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#mpl_toolkits.mplot3d.Axes3D.plot_wireframe" title="Permalink to this definition">¶</a></dt>
-<dd><blockquote>
-<div><p>Plot a 3D wireframe.</p>
-<p>The <code class="xref py py-obj docutils literal"><span class="pre">rstride</span></code> and <code class="xref py py-obj docutils literal"><span class="pre">cstride</span></code> kwargs set the stride used to
-sample the input data to generate the graph. If either is 0
-the input data in not sampled along this direction producing a
-3D line plot rather than a wireframe plot. The stride arguments
-are only used by default if in the ‘classic’ mode. They are
-now superseded by <code class="xref py py-obj docutils literal"><span class="pre">rcount</span></code> and <code class="xref py py-obj docutils literal"><span class="pre">ccount</span></code>. Will raise ValueError
-if both stride and count are used.</p>
-</div></blockquote>
-<dl class="docutils">
-<dt>`       The <code class="xref py py-obj docutils literal"><span class="pre">rcount</span></code> and <code class="xref py py-obj docutils literal"><span class="pre">ccount</span></code> kwargs supersedes <code class="xref py py-obj docutils literal"><span class="pre">rstride</span></code> and</dt>
-<dd><p class="first"><code class="xref py py-obj docutils literal"><span class="pre">cstride</span></code> for default sampling method for wireframe plotting.
-These arguments will determine at most how many evenly spaced
-samples will be taken from the input data to generate the graph.
-This is the default sampling method unless using the ‘classic’
-style. Will raise ValueError if both stride and count are
-specified. If either is zero, then the input data is not sampled
-along this direction, producing a 3D line plot rather than a
-wireframe plot.
-Added in v2.0.0.</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="17%" />
-<col width="83%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Argument</th>
-<th class="head">Description</th>
-</tr>
-</thead>
+<dd><p>Plot a 3D wireframe.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The <em>rcount</em> and <em>ccount</em> kwargs, which both default to 50,
+determine the maximum number of samples used in each direction.  If
+the input data is larger, it will be downsampled (by slicing) to
+these numbers of points.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
 <tbody valign="top">
-<tr class="row-even"><td><em>X</em>, <em>Y</em>,</td>
-<td>Data values as 2D arrays</td>
-</tr>
-<tr class="row-odd"><td><em>Z</em></td>
-<td>&#160;</td>
-</tr>
-<tr class="row-even"><td><em>rstride</em></td>
-<td>Array row stride (step size), defaults to 1</td>
-</tr>
-<tr class="row-odd"><td><em>cstride</em></td>
-<td>Array column stride (step size), defaults to 1</td>
-</tr>
-<tr class="row-even"><td><em>rcount</em></td>
-<td>Use at most this many rows, defaults to 50</td>
-</tr>
-<tr class="row-odd"><td><em>ccount</em></td>
-<td>Use at most this many columns, defaults to 50</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>X, Y, Z</strong> : 2d arrays</p>
+<blockquote>
+<div><p>Data values.</p>
+</div></blockquote>
+<p><strong>rcount, ccount</strong> : int</p>
+<blockquote>
+<div><p>Maximum number of samples used in each direction.  If the input
+data is larger, it will be downsampled (by slicing) to these
+numbers of points.  Setting a count to zero causes the data to be
+not sampled in the corresponding direction, producing a 3D line
+plot rather than a wireframe plot.  Defaults to 50.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 2.0.</span></p>
+</div>
+</div></blockquote>
+<p><strong>rstride, cstride</strong> : int</p>
+<blockquote>
+<div><p>Downsampling stride in each direction.  These arguments are
+mutually exclusive with <em>rcount</em> and <em>ccount</em>.  If only one of
+<em>rstride</em> or <em>cstride</em> is set, the other defaults to 1.  Setting a
+stride to zero causes the data to be not sampled in the
+corresponding direction, producing a 3D line plot rather than a
+wireframe plot.</p>
+<p>‘classic’ mode uses a default of <code class="docutils literal"><span class="pre">rstride</span> <span class="pre">=</span> <span class="pre">cstride</span> <span class="pre">=</span> <span class="pre">1</span></code> instead
+of the new default of <code class="docutils literal"><span class="pre">rcount</span> <span class="pre">=</span> <span class="pre">ccount</span> <span class="pre">=</span> <span class="pre">50</span></code>.</p>
+</div></blockquote>
+<p><strong>**kwargs :</strong></p>
+<blockquote class="last">
+<div><p>Other arguments are forwarded to <a class="reference internal" href="../../api/_as_gen/mpl_toolkits.mplot3d.art3d.Line3DCollection.html#mpl_toolkits.mplot3d.art3d.Line3DCollection" title="mpl_toolkits.mplot3d.art3d.Line3DCollection"><code class="xref py py-obj docutils literal"><span class="pre">Line3DCollection</span></code></a>.</p>
+</div></blockquote>
+</td>
 </tr>
 </tbody>
 </table>
-<p>Keyword arguments are passed on to
-<a class="reference internal" href="../../api/collections_api.html#matplotlib.collections.LineCollection" title="matplotlib.collections.LineCollection"><code class="xref py py-class docutils literal"><span class="pre">LineCollection</span></code></a>.</p>
-<p class="last">Returns a <a class="reference internal" href="../../api/_as_gen/mpl_toolkits.mplot3d.art3d.Line3DCollection.html#mpl_toolkits.mplot3d.art3d.Line3DCollection" title="mpl_toolkits.mplot3d.art3d.Line3DCollection"><code class="xref py py-class docutils literal"><span class="pre">Line3DCollection</span></code></a></p>
-</dd>
-</dl>
 </dd></dl>
 
 <div class="figure align-center" id="id3">
@@ -371,74 +373,72 @@ Added in v2.0.0.</p>
 <dt id="mpl_toolkits.mplot3d.Axes3D.plot_surface">
 <code class="descclassname">Axes3D.</code><code class="descname">plot_surface</code><span class="sig-paren">(</span><em>X</em>, <em>Y</em>, <em>Z</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#mpl_toolkits.mplot3d.Axes3D.plot_surface" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a surface plot.</p>
-<p>By default it will be colored in shades of a solid color,
-but it also supports color mapping by supplying the <em>cmap</em>
-argument.</p>
-<p>The <code class="xref py py-obj docutils literal"><span class="pre">rstride</span></code> and <code class="xref py py-obj docutils literal"><span class="pre">cstride</span></code> kwargs set the stride used to
-sample the input data to generate the graph.  If 1k by 1k
-arrays are passed in, the default values for the strides will
-result in a 100x100 grid being plotted. Defaults to 10.
-Raises a ValueError if both stride and count kwargs
-(see next section) are provided.</p>
-<p>The <code class="xref py py-obj docutils literal"><span class="pre">rcount</span></code> and <code class="xref py py-obj docutils literal"><span class="pre">ccount</span></code> kwargs supersedes <code class="xref py py-obj docutils literal"><span class="pre">rstride</span></code> and
-<code class="xref py py-obj docutils literal"><span class="pre">cstride</span></code> for default sampling method for surface plotting.
-These arguments will determine at most how many evenly spaced
-samples will be taken from the input data to generate the graph.
-This is the default sampling method unless using the ‘classic’
-style. Will raise ValueError if both stride and count are
-specified.
-Added in v2.0.0.</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="21%" />
-<col width="79%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Argument</th>
-<th class="head">Description</th>
-</tr>
-</thead>
+<p>By default it will be colored in shades of a solid color, but it also
+supports color mapping by supplying the <em>cmap</em> argument.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The <em>rcount</em> and <em>ccount</em> kwargs, which both default to 50,
+determine the maximum number of samples used in each direction.  If
+the input data is larger, it will be downsampled (by slicing) to
+these numbers of points.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
 <tbody valign="top">
-<tr class="row-even"><td><em>X</em>, <em>Y</em>, <em>Z</em></td>
-<td>Data values as 2D arrays</td>
-</tr>
-<tr class="row-odd"><td><em>rstride</em></td>
-<td>Array row stride (step size)</td>
-</tr>
-<tr class="row-even"><td><em>cstride</em></td>
-<td>Array column stride (step size)</td>
-</tr>
-<tr class="row-odd"><td><em>rcount</em></td>
-<td>Use at most this many rows, defaults to 50</td>
-</tr>
-<tr class="row-even"><td><em>ccount</em></td>
-<td>Use at most this many columns, defaults to 50</td>
-</tr>
-<tr class="row-odd"><td><em>color</em></td>
-<td>Color of the surface patches</td>
-</tr>
-<tr class="row-even"><td><em>cmap</em></td>
-<td>A colormap for the surface patches.</td>
-</tr>
-<tr class="row-odd"><td><em>facecolors</em></td>
-<td>Face colors for the individual patches</td>
-</tr>
-<tr class="row-even"><td><em>norm</em></td>
-<td>An instance of Normalize to map values to colors</td>
-</tr>
-<tr class="row-odd"><td><em>vmin</em></td>
-<td>Minimum value to map</td>
-</tr>
-<tr class="row-even"><td><em>vmax</em></td>
-<td>Maximum value to map</td>
-</tr>
-<tr class="row-odd"><td><em>shade</em></td>
-<td>Whether to shade the facecolors</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>X, Y, Z</strong> : 2d arrays</p>
+<blockquote>
+<div><p>Data values.</p>
+</div></blockquote>
+<p><strong>rcount, ccount</strong> : int</p>
+<blockquote>
+<div><p>Maximum number of samples used in each direction.  If the input
+data is larger, it will be downsampled (by slicing) to these
+numbers of points.  Defaults to 50.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 2.0.</span></p>
+</div>
+</div></blockquote>
+<p><strong>rstride, cstride</strong> : int</p>
+<blockquote>
+<div><p>Downsampling stride in each direction.  These arguments are
+mutually exclusive with <em>rcount</em> and <em>ccount</em>.  If only one of
+<em>rstride</em> or <em>cstride</em> is set, the other defaults to 10.</p>
+<p>‘classic’ mode uses a default of <code class="docutils literal"><span class="pre">rstride</span> <span class="pre">=</span> <span class="pre">cstride</span> <span class="pre">=</span> <span class="pre">10</span></code> instead
+of the new default of <code class="docutils literal"><span class="pre">rcount</span> <span class="pre">=</span> <span class="pre">ccount</span> <span class="pre">=</span> <span class="pre">50</span></code>.</p>
+</div></blockquote>
+<p><strong>color</strong> : color-like</p>
+<blockquote>
+<div><p>Color of the surface patches.</p>
+</div></blockquote>
+<p><strong>cmap</strong> : Colormap</p>
+<blockquote>
+<div><p>Colormap of the surface patches.</p>
+</div></blockquote>
+<p><strong>facecolors</strong> : array-like of colors.</p>
+<blockquote>
+<div><p>Colors of each individual patch.</p>
+</div></blockquote>
+<p><strong>norm</strong> : Normalize</p>
+<blockquote>
+<div><p>Normalization for the colormap.</p>
+</div></blockquote>
+<p><strong>vmin, vmax</strong> : float</p>
+<blockquote>
+<div><p>Bounds for the normalization.</p>
+</div></blockquote>
+<p><strong>shade</strong> : bool</p>
+<blockquote>
+<div><p>Whether to shade the face colors.</p>
+</div></blockquote>
+<p><strong>**kwargs :</strong></p>
+<blockquote class="last">
+<div><p>Other arguments are forwarded to <a class="reference internal" href="../../api/_as_gen/mpl_toolkits.mplot3d.art3d.Poly3DCollection.html#mpl_toolkits.mplot3d.art3d.Poly3DCollection" title="mpl_toolkits.mplot3d.art3d.Poly3DCollection"><code class="xref py py-obj docutils literal"><span class="pre">Poly3DCollection</span></code></a>.</p>
+</div></blockquote>
+</td>
 </tr>
 </tbody>
 </table>
-<p>Other arguments are passed on to
-<a class="reference internal" href="../../api/_as_gen/mpl_toolkits.mplot3d.art3d.Poly3DCollection.html#mpl_toolkits.mplot3d.art3d.Poly3DCollection" title="mpl_toolkits.mplot3d.art3d.Poly3DCollection"><code class="xref py py-class docutils literal"><span class="pre">Poly3DCollection</span></code></a></p>
 </dd></dl>
 
 <div class="figure align-center" id="id4">
@@ -515,11 +515,11 @@ in the triangulation.</p>
 <p><strong>Examples:</strong></p>
 <p>(<a class="reference external" href="../../gallery/mplot3d/trisurf3d.py">Source code</a>, <a class="reference external" href="../../gallery/mplot3d/trisurf3d.png">png</a>, <a class="reference external" href="../../gallery/mplot3d/trisurf3d.pdf">pdf</a>)</p>
 <div class="figure">
-<img alt="../../_images/trisurf3d.png" src="../../_images/trisurf3d.png" />
+<img alt="../../_images/trisurf3d1.png" src="../../_images/trisurf3d1.png" />
 </div>
 <p>(<a class="reference external" href="../../gallery/mplot3d/trisurf3d_2.py">Source code</a>, <a class="reference external" href="../../gallery/mplot3d/trisurf3d_2.png">png</a>, <a class="reference external" href="../../gallery/mplot3d/trisurf3d_2.pdf">pdf</a>)</p>
 <div class="figure">
-<img alt="../../_images/trisurf3d_2.png" src="../../_images/trisurf3d_2.png" />
+<img alt="../../_images/trisurf3d_21.png" src="../../_images/trisurf3d_21.png" />
 </div>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 1.2.0: </span>This plotting function was added for the v1.2.0 release.</p>
@@ -638,7 +638,7 @@ result of a bugfix for version 1.1.0.</p>
 <span id="polygon3d"></span><h3>Polygon plots<a class="headerlink" href="#polygon-plots" title="Permalink to this headline">¶</a></h3>
 <dl class="method">
 <dt id="mpl_toolkits.mplot3d.Axes3D.add_collection3d">
-<code class="descclassname">Axes3D.</code><code class="descname">add_collection3d</code><span class="sig-paren">(</span><em>col</em>, <em>zs=0</em>, <em>zdir=’z’</em><span class="sig-paren">)</span><a class="headerlink" href="#mpl_toolkits.mplot3d.Axes3D.add_collection3d" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">Axes3D.</code><code class="descname">add_collection3d</code><span class="sig-paren">(</span><em>col</em>, <em>zs=0</em>, <em>zdir='z'</em><span class="sig-paren">)</span><a class="headerlink" href="#mpl_toolkits.mplot3d.Axes3D.add_collection3d" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add a 3D collection object to the plot.</p>
 <p>2D collection types are converted to a 3D version by
 modifying the object and adding z coordinate information.</p>
@@ -662,7 +662,7 @@ modifying the object and adding z coordinate information.</p>
 <span id="bar3d"></span><h3>Bar plots<a class="headerlink" href="#bar-plots" title="Permalink to this headline">¶</a></h3>
 <dl class="method">
 <dt id="mpl_toolkits.mplot3d.Axes3D.bar">
-<code class="descclassname">Axes3D.</code><code class="descname">bar</code><span class="sig-paren">(</span><em>left</em>, <em>height</em>, <em>zs=0</em>, <em>zdir=’z’</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#mpl_toolkits.mplot3d.Axes3D.bar" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">Axes3D.</code><code class="descname">bar</code><span class="sig-paren">(</span><em>left</em>, <em>height</em>, <em>zs=0</em>, <em>zdir='z'</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#mpl_toolkits.mplot3d.Axes3D.bar" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add 2D bar(s).</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -789,14 +789,13 @@ do this.</p>
 <div class="legend">
 Mixed Subplots</div>
 </div>
-<p><strong>Total running time of the script:</strong> ( 0 minutes  0.000 seconds)</p>
-<div class="sphx-glr-footer container">
-<div class="sphx-glr-download container">
+<div class="sphx-glr-footer docutils container">
+<div class="sphx-glr-download docutils container">
 <a class="reference download internal" href="../../_downloads/mplot3d.py" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">mplot3d.py</span></code></a></div>
-<div class="sphx-glr-download container">
+<div class="sphx-glr-download docutils container">
 <a class="reference download internal" href="../../_downloads/mplot3d.ipynb" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">mplot3d.ipynb</span></code></a></div>
 </div>
-<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.readthedocs.io">Generated by Sphinx-Gallery</a></p>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.readthedocs.io">Gallery generated by Sphinx-Gallery</a></p>
 </div>
 </div>
 </div>
@@ -810,9 +809,9 @@ Mixed Subplots</div>
     </div>
     <div class="footer">
         &copy; Copyright 2002 - 2012 John Hunter, Darren Dale, Eric Firing, Michael Droettboom and the Matplotlib development team; 2012 - 2017 The Matplotlib development team.
-      Last updated on Jul 16, 2017.
+      Last updated on Dec 04, 2017.
       Created using <a
-href="http://sphinx-doc.org/">Sphinx</a> 1.6.2.
+href="http://sphinx-doc.org/">Sphinx</a> 1.6.5.
     </div>
 
 <script>

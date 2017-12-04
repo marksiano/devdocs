@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>matplotlib.axes.Axes.get_yticklabels &mdash; Matplotlib 2.0.2.post4416.dev0+g1df513f documentation</title>
+    <title>matplotlib.axes.Axes.get_yticklabels &mdash; Matplotlib 2.1.0.post986+g1493192 documentation</title>
     
     <link rel="stylesheet" href="../../_static/mpl.css"
 type="text/css" />
@@ -17,7 +17,7 @@ type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '2.0.2.post4416.dev0+g1df513f',
+        VERSION:     '2.1.0.post986+g1493192',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -28,32 +28,34 @@ type="text/css" />
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within Matplotlib 2.0.2.post4416.dev0+g1df513f documentation"
+          title="Search within Matplotlib 2.1.0.post986+g1493192 documentation"
           href="../../_static/opensearch.xml"/>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html"
 />
     <link rel="search" title="Search" href="../../search.html"
 />
-    <link rel="top" title="Matplotlib 2.0.2.post4416.dev0+g1df513f documentation" href="../../index.html" />
+    <link rel="top" title="Matplotlib 2.1.0.post986+g1493192 documentation" href="../../index.html" />
     <link rel="up" title="Axes class" href="../axes_api.html" />
-    <link rel="next" title="matplotlib.axes.Axes.get_yticklines" href="matplotlib.axes.Axes.get_yticklines.html" />
-    <link rel="prev" title="matplotlib.axes.Axes.get_yminorticklabels" href="matplotlib.axes.Axes.get_yminorticklabels.html" /> 
+    <link rel="next" title="matplotlib.axes.Axes.get_ymajorticklabels" href="matplotlib.axes.Axes.get_ymajorticklabels.html" />
+    <link rel="prev" title="matplotlib.axes.Axes.set_yticklabels" href="matplotlib.axes.Axes.set_yticklabels.html" /> 
 
 
   </head>
   <body>
 
 
+<div id="unreleased-message">
+    You are reading documentation for the unreleased version of Matplotlib.
+    <a href="https://matplotlib.org/search.html?q=matplotlib.axes.Axes.get_yticklabels&amp;check_keywords=yes&amp;area=default">
+        Try searching for the released version of this page instead?
+    </a>
+</div>
+<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px; position: relative;">
+<a href="../../index.html"><img src="../../_static/logo2.svg" width="540px" border="0" alt="matplotlib"/></a>
 
 <!-- The "Fork me on github" ribbon -->
-<img style="float: right; margin-bottom: -40px; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png" usemap="#ribbonmap"/>
-<map name="ribbonmap">
-    <area shape="poly" coords="15,0,148,-1,148,135" href="https://github.com/matplotlib/matplotlib" title="Fork me on GitHub" />
-</map>
-
-<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
-<a href="../../index.html"><img src="../../_static/logo2.svg" width="540px" border="0" alt="matplotlib"/></a>
+<div id="forkongithub"><a href="https://github.com/matplotlib/matplotlib">Fork me on GitHub</a></div>
 </div>
 
 
@@ -69,10 +71,10 @@ type="text/css" />
           <a href="../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="matplotlib.axes.Axes.get_yticklines.html" title="matplotlib.axes.Axes.get_yticklines"
+          <a href="matplotlib.axes.Axes.get_ymajorticklabels.html" title="matplotlib.axes.Axes.get_ymajorticklabels"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="matplotlib.axes.Axes.get_yminorticklabels.html" title="matplotlib.axes.Axes.get_yminorticklabels"
+          <a href="matplotlib.axes.Axes.set_yticklabels.html" title="matplotlib.axes.Axes.set_yticklabels"
              accesskey="P">previous</a> |</li>
 
         <li><a href="../../index.html">home</a>|&nbsp;</li>
@@ -93,12 +95,6 @@ type="text/css" />
 
 <br/>
 
-<a href="http://depsy.org/package/python/matplotlib">
-  <img src="../../_static/depsy_badge.svg">
-</a>
-
-<br/>
-
 Travis-CI: <a href="https://travis-ci.org/matplotlib/matplotlib">
   <img src="https://travis-ci.org/matplotlib/matplotlib.svg?branch=master"/>
 </a>
@@ -108,8 +104,8 @@ Travis-CI: <a href="https://travis-ci.org/matplotlib/matplotlib">
   <li><a href="../../contents.html">Documentation overview</a><ul>
   <li><a href="../index.html">The Matplotlib API</a><ul>
   <li><a href="../axes_api.html"><code class="docutils literal"><span class="pre">Axes</span></code> class</a><ul>
-      <li>Previous: <a href="matplotlib.axes.Axes.get_yminorticklabels.html" title="previous chapter">matplotlib.axes.Axes.get_yminorticklabels</a></li>
-      <li>Next: <a href="matplotlib.axes.Axes.get_yticklines.html" title="next chapter">matplotlib.axes.Axes.get_yticklines</a></li>
+      <li>Previous: <a href="matplotlib.axes.Axes.set_yticklabels.html" title="previous chapter">matplotlib.axes.Axes.set_yticklabels</a></li>
+      <li>Next: <a href="matplotlib.axes.Axes.get_ymajorticklabels.html" title="next chapter">matplotlib.axes.Axes.get_ymajorticklabels</a></li>
   </ul></li>
   </ul></li>
   </ul></li>
@@ -183,9 +179,9 @@ else return the major ticklabels</p>
     </div>
     <div class="footer">
         &copy; Copyright 2002 - 2012 John Hunter, Darren Dale, Eric Firing, Michael Droettboom and the Matplotlib development team; 2012 - 2017 The Matplotlib development team.
-      Last updated on Jul 16, 2017.
+      Last updated on Dec 04, 2017.
       Created using <a
-href="http://sphinx-doc.org/">Sphinx</a> 1.6.2.
+href="http://sphinx-doc.org/">Sphinx</a> 1.6.5.
     </div>
 
 <script>

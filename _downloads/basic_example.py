@@ -3,8 +3,8 @@
 Simple animation examples
 =========================
 
-This example contains two animations. The first is a random walk plot. The
-second is an image animation.
+Two animations where the first is a random walk plot and
+the second is an image animation.
 """
 
 import numpy as np
@@ -15,6 +15,8 @@ import matplotlib.animation as animation
 def update_line(num, data, line):
     line.set_data(data[..., :num])
     return line,
+
+###############################################################################
 
 fig1 = plt.figure()
 
@@ -31,6 +33,8 @@ line_ani = animation.FuncAnimation(fig1, update_line, 25, fargs=(data, l),
                                    interval=50, blit=True)
 
 # To save the animation, use the command: line_ani.save('lines.mp4')
+
+###############################################################################
 
 fig2 = plt.figure()
 

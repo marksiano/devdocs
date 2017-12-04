@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>MEP27: decouple pyplot from backends &mdash; Matplotlib 2.0.2.post4416.dev0+g1df513f documentation</title>
+    <title>MEP27: decouple pyplot from backends &mdash; Matplotlib 2.1.0.post986+g1493192 documentation</title>
     
     <link rel="stylesheet" href="../../_static/mpl.css"
 type="text/css" />
@@ -17,7 +17,7 @@ type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '2.0.2.post4416.dev0+g1df513f',
+        VERSION:     '2.1.0.post986+g1493192',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -28,14 +28,14 @@ type="text/css" />
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within Matplotlib 2.0.2.post4416.dev0+g1df513f documentation"
+          title="Search within Matplotlib 2.1.0.post986+g1493192 documentation"
           href="../../_static/opensearch.xml"/>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html"
 />
     <link rel="search" title="Search" href="../../search.html"
 />
-    <link rel="top" title="Matplotlib 2.0.2.post4416.dev0+g1df513f documentation" href="../../index.html" />
+    <link rel="top" title="Matplotlib 2.1.0.post986+g1493192 documentation" href="../../index.html" />
     <link rel="up" title="Matplotlib Enhancement Proposals" href="index.html" />
     <link rel="next" title="MEP28: Remove Complexity from Axes.boxplot" href="MEP28.html" />
     <link rel="prev" title="MEP26: Artist styling" href="MEP26.html" /> 
@@ -45,15 +45,17 @@ type="text/css" />
   <body>
 
 
+<div id="unreleased-message">
+    You are reading documentation for the unreleased version of Matplotlib.
+    <a href="https://matplotlib.org/search.html?q=MEP27%3A%20decouple%20pyplot%20from%20backends&amp;check_keywords=yes&amp;area=default">
+        Try searching for the released version of this page instead?
+    </a>
+</div>
+<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px; position: relative;">
+<a href="../../index.html"><img src="../../_static/logo2.svg" width="540px" border="0" alt="matplotlib"/></a>
 
 <!-- The "Fork me on github" ribbon -->
-<img style="float: right; margin-bottom: -40px; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png" usemap="#ribbonmap"/>
-<map name="ribbonmap">
-    <area shape="poly" coords="15,0,148,-1,148,135" href="https://github.com/matplotlib/matplotlib" title="Fork me on GitHub" />
-</map>
-
-<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
-<a href="../../index.html"><img src="../../_static/logo2.svg" width="540px" border="0" alt="matplotlib"/></a>
+<div id="forkongithub"><a href="https://github.com/matplotlib/matplotlib">Fork me on GitHub</a></div>
 </div>
 
 
@@ -89,12 +91,6 @@ type="text/css" />
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper"><a href="https://www.numfocus.org">
   <image src="https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&amp;colorA=E1523D&amp;colorB=007D8A">
-</a>
-
-<br/>
-
-<a href="http://depsy.org/package/python/matplotlib">
-  <img src="../../_static/depsy_badge.svg">
 </a>
 
 <br/>
@@ -211,8 +207,8 @@ depending on the backend.</p>
 <li><p class="first"><code class="docutils literal"><span class="pre">FigureManagerBase</span></code> has <strong>three</strong> jobs at the moment:</p>
 <blockquote>
 <div><ol class="arabic simple">
-<li>The documentation describes it as a <em>“Helper class for pyplot
-mode, wraps everything up into a neat bundle”</em></li>
+<li>The documentation describes it as a <em>``Helper class for pyplot
+mode, wraps everything up into a neat bundle’‘</em></li>
 <li>But it doesn’t just wrap the canvas and toolbar, it also does
 all of the windowing tasks itself.  The conflation of these two
 tasks gets seen the best in the following line: <code class="docutils literal"><span class="pre">`python</span>
@@ -307,34 +303,28 @@ components</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td>show_popup</td>
-<td>show_poup</td>
-<td>&#160;</td>
-<td>Not used anywhere in mpl, and
-does nothing.</td>
-</tr>
-<tr class="row-even"><td>get_window_title</td>
+<tr class="row-odd"><td>get_window_title</td>
 <td>&#160;</td>
 <td>get_window_title</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td>set_window_title</td>
+<tr class="row-even"><td>set_window_title</td>
 <td>&#160;</td>
 <td>set_window_title</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td>&#160;</td>
+<tr class="row-odd"><td>&#160;</td>
 <td>_get_toolbar</td>
 <td>&#160;</td>
 <td>A common method to all
 subclasses of FigureManagerBase</td>
 </tr>
-<tr class="row-odd"><td>&#160;</td>
+<tr class="row-even"><td>&#160;</td>
 <td>&#160;</td>
 <td>set_default_size</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td>&#160;</td>
+<tr class="row-odd"><td>&#160;</td>
 <td>&#160;</td>
 <td>add_element_to_window</td>
 <td>&#160;</td>
@@ -472,9 +462,9 @@ matplotlib. I think this MEP is a step in the right direction.</p>
     </div>
     <div class="footer">
         &copy; Copyright 2002 - 2012 John Hunter, Darren Dale, Eric Firing, Michael Droettboom and the Matplotlib development team; 2012 - 2017 The Matplotlib development team.
-      Last updated on Jul 16, 2017.
+      Last updated on Dec 04, 2017.
       Created using <a
-href="http://sphinx-doc.org/">Sphinx</a> 1.6.2.
+href="http://sphinx-doc.org/">Sphinx</a> 1.6.5.
     </div>
 
 <script>

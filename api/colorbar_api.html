@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>colorbar &mdash; Matplotlib 2.0.2.post4416.dev0+g1df513f documentation</title>
+    <title>colorbar &mdash; Matplotlib 2.1.0.post986+g1493192 documentation</title>
     
     <link rel="stylesheet" href="../_static/mpl.css"
 type="text/css" />
@@ -17,7 +17,7 @@ type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '2.0.2.post4416.dev0+g1df513f',
+        VERSION:     '2.1.0.post986+g1493192',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -28,14 +28,14 @@ type="text/css" />
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within Matplotlib 2.0.2.post4416.dev0+g1df513f documentation"
+          title="Search within Matplotlib 2.1.0.post986+g1493192 documentation"
           href="../_static/opensearch.xml"/>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html"
 />
     <link rel="search" title="Search" href="../search.html"
 />
-    <link rel="top" title="Matplotlib 2.0.2.post4416.dev0+g1df513f documentation" href="../index.html" />
+    <link rel="top" title="Matplotlib 2.1.0.post986+g1493192 documentation" href="../index.html" />
     <link rel="up" title="The Matplotlib API" href="index.html" />
     <link rel="next" title="colors" href="colors_api.html" />
     <link rel="prev" title="collections" href="collections_api.html" /> 
@@ -45,15 +45,17 @@ type="text/css" />
   <body>
 
 
+<div id="unreleased-message">
+    You are reading documentation for the unreleased version of Matplotlib.
+    <a href="https://matplotlib.org/search.html?q=colorbar&amp;check_keywords=yes&amp;area=default">
+        Try searching for the released version of this page instead?
+    </a>
+</div>
+<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px; position: relative;">
+<a href="../index.html"><img src="../_static/logo2.svg" width="540px" border="0" alt="matplotlib"/></a>
 
 <!-- The "Fork me on github" ribbon -->
-<img style="float: right; margin-bottom: -40px; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png" usemap="#ribbonmap"/>
-<map name="ribbonmap">
-    <area shape="poly" coords="15,0,148,-1,148,135" href="https://github.com/matplotlib/matplotlib" title="Fork me on GitHub" />
-</map>
-
-<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
-<a href="../index.html"><img src="../_static/logo2.svg" width="540px" border="0" alt="matplotlib"/></a>
+<div id="forkongithub"><a href="https://github.com/matplotlib/matplotlib">Fork me on GitHub</a></div>
 </div>
 
 
@@ -88,12 +90,6 @@ type="text/css" />
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper"><a href="https://www.numfocus.org">
   <image src="https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&amp;colorA=E1523D&amp;colorB=007D8A">
-</a>
-
-<br/>
-
-<a href="http://depsy.org/package/python/matplotlib">
-  <img src="../_static/depsy_badge.svg">
 </a>
 
 <br/>
@@ -162,9 +158,9 @@ a mappable object (e.g., image) is not needed.</dd>
 suitable for a colorbar</dd>
 </dl>
 </div></blockquote>
-<p>The <code class="xref py py-meth docutils literal"><span class="pre">colorbar()</span></code> method uses <a class="reference internal" href="#matplotlib.colorbar.make_axes" title="matplotlib.colorbar.make_axes"><code class="xref py py-func docutils literal"><span class="pre">make_axes()</span></code></a>
+<p>The <a class="reference internal" href="_as_gen/matplotlib.figure.Figure.html#matplotlib.figure.Figure.colorbar" title="matplotlib.figure.Figure.colorbar"><code class="xref py py-meth docutils literal"><span class="pre">colorbar()</span></code></a> method uses <a class="reference internal" href="#matplotlib.colorbar.make_axes" title="matplotlib.colorbar.make_axes"><code class="xref py py-func docutils literal"><span class="pre">make_axes()</span></code></a>
 and <a class="reference internal" href="#matplotlib.colorbar.Colorbar" title="matplotlib.colorbar.Colorbar"><code class="xref py py-class docutils literal"><span class="pre">Colorbar</span></code></a>; the <a class="reference internal" href="_as_gen/matplotlib.pyplot.colorbar.html#matplotlib.pyplot.colorbar" title="matplotlib.pyplot.colorbar"><code class="xref py py-func docutils literal"><span class="pre">colorbar()</span></code></a> function
-is a thin wrapper over <code class="xref py py-meth docutils literal"><span class="pre">colorbar()</span></code>.</p>
+is a thin wrapper over <a class="reference internal" href="_as_gen/matplotlib.figure.Figure.html#matplotlib.figure.Figure.colorbar" title="matplotlib.figure.Figure.colorbar"><code class="xref py py-meth docutils literal"><span class="pre">colorbar()</span></code></a>.</p>
 <dl class="class">
 <dt id="matplotlib.colorbar.Colorbar">
 <em class="property">class </em><code class="descclassname">matplotlib.colorbar.</code><code class="descname">Colorbar</code><span class="sig-paren">(</span><em>ax</em>, <em>mappable</em>, <em>**kw</em><span class="sig-paren">)</span><a class="headerlink" href="#matplotlib.colorbar.Colorbar" title="Permalink to this definition">¶</a></dt>
@@ -174,7 +170,7 @@ is a thin wrapper over <code class="xref py py-meth docutils literal"><span clas
 <a class="reference internal" href="image_api.html#matplotlib.image.AxesImage" title="matplotlib.image.AxesImage"><code class="xref py py-class docutils literal"><span class="pre">AxesImage</span></code></a> generated via
 <a class="reference internal" href="_as_gen/matplotlib.axes.Axes.imshow.html#matplotlib.axes.Axes.imshow" title="matplotlib.axes.Axes.imshow"><code class="xref py py-meth docutils literal"><span class="pre">imshow()</span></code></a>.</p>
 <p>It is not intended to be instantiated directly; instead,
-use <code class="xref py py-meth docutils literal"><span class="pre">colorbar()</span></code> or
+use <a class="reference internal" href="_as_gen/matplotlib.figure.Figure.html#matplotlib.figure.Figure.colorbar" title="matplotlib.figure.Figure.colorbar"><code class="xref py py-meth docutils literal"><span class="pre">colorbar()</span></code></a> or
 <a class="reference internal" href="_as_gen/matplotlib.pyplot.colorbar.html#matplotlib.pyplot.colorbar" title="matplotlib.pyplot.colorbar"><code class="xref py py-func docutils literal"><span class="pre">colorbar()</span></code></a> to make your colorbar.</p>
 <dl class="method">
 <dt id="matplotlib.colorbar.Colorbar.add_lines">
@@ -222,12 +218,12 @@ or contour plot to which this colorbar belongs is changed.</p>
 
 <dl class="class">
 <dt id="matplotlib.colorbar.ColorbarBase">
-<em class="property">class </em><code class="descclassname">matplotlib.colorbar.</code><code class="descname">ColorbarBase</code><span class="sig-paren">(</span><em>ax</em>, <em>cmap=None</em>, <em>norm=None</em>, <em>alpha=None</em>, <em>values=None</em>, <em>boundaries=None</em>, <em>orientation=’vertical’</em>, <em>ticklocation=’auto’</em>, <em>extend=’neither’</em>, <em>spacing=’uniform’</em>, <em>ticks=None</em>, <em>format=None</em>, <em>drawedges=False</em>, <em>filled=True</em>, <em>extendfrac=None</em>, <em>extendrect=False</em>, <em>label=”</em><span class="sig-paren">)</span><a class="headerlink" href="#matplotlib.colorbar.ColorbarBase" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">matplotlib.colorbar.</code><code class="descname">ColorbarBase</code><span class="sig-paren">(</span><em>ax</em>, <em>cmap=None</em>, <em>norm=None</em>, <em>alpha=None</em>, <em>values=None</em>, <em>boundaries=None</em>, <em>orientation='vertical'</em>, <em>ticklocation='auto'</em>, <em>extend='neither'</em>, <em>spacing='uniform'</em>, <em>ticks=None</em>, <em>format=None</em>, <em>drawedges=False</em>, <em>filled=True</em>, <em>extendfrac=None</em>, <em>extendrect=False</em>, <em>label=''</em><span class="sig-paren">)</span><a class="headerlink" href="#matplotlib.colorbar.ColorbarBase" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="cm_api.html#matplotlib.cm.ScalarMappable" title="matplotlib.cm.ScalarMappable"><code class="xref py py-class docutils literal"><span class="pre">matplotlib.cm.ScalarMappable</span></code></a></p>
 <p>Draw a colorbar in an existing axes.</p>
 <p>This is a base class for the <a class="reference internal" href="#matplotlib.colorbar.Colorbar" title="matplotlib.colorbar.Colorbar"><code class="xref py py-class docutils literal"><span class="pre">Colorbar</span></code></a> class, which is the
 basis for the <a class="reference internal" href="_as_gen/matplotlib.pyplot.colorbar.html#matplotlib.pyplot.colorbar" title="matplotlib.pyplot.colorbar"><code class="xref py py-func docutils literal"><span class="pre">colorbar()</span></code></a> function and the
-<code class="xref py py-meth docutils literal"><span class="pre">colorbar()</span></code> method, which are the
+<a class="reference internal" href="_as_gen/matplotlib.figure.Figure.html#matplotlib.figure.Figure.colorbar" title="matplotlib.figure.Figure.colorbar"><code class="xref py py-meth docutils literal"><span class="pre">colorbar()</span></code></a> method, which are the
 usual ways of creating a colorbar.</p>
 <p>It is also useful by itself for showing a colormap.  If the <em>cmap</em>
 kwarg is given but <em>boundaries</em> and <em>values</em> are left as None,
@@ -367,7 +363,7 @@ members of the collection.</p>
 <code class="descclassname">matplotlib.colorbar.</code><code class="descname">colorbar_factory</code><span class="sig-paren">(</span><em>cax</em>, <em>mappable</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#matplotlib.colorbar.colorbar_factory" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a colorbar on the given axes for the given mappable.</p>
 <p>Typically, for automatic colorbar placement given only a mappable use
-<code class="xref py py-meth docutils literal"><span class="pre">colorbar()</span></code>.</p>
+<a class="reference internal" href="_as_gen/matplotlib.figure.Figure.html#matplotlib.figure.Figure.colorbar" title="matplotlib.figure.Figure.colorbar"><code class="xref py py-meth docutils literal"><span class="pre">colorbar()</span></code></a>.</p>
 </dd></dl>
 
 <dl class="function">
@@ -389,8 +385,8 @@ be used, as it can be derived from the <code class="docutils literal"><span clas
 </div></blockquote>
 <table border="1" class="docutils">
 <colgroup>
-<col width="20%" />
-<col width="80%" />
+<col width="18%" />
+<col width="82%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Property</th>
@@ -409,7 +405,7 @@ be used, as it can be derived from the <code class="docutils literal"><span clas
 of original axes between colorbar and new image axes</td>
 </tr>
 <tr class="row-odd"><td><em>shrink</em></td>
-<td>1.0; fraction by which to shrink the colorbar</td>
+<td>1.0; fraction by which to multiply the size of the colorbar</td>
 </tr>
 <tr class="row-even"><td><em>aspect</em></td>
 <td>20; ratio of long to short dimensions</td>
@@ -436,23 +432,19 @@ passed when creating the colorbar instance.</p>
 suitable for a colorbar. This function is similar to
 make_axes. Prmary differences are</p>
 <blockquote>
-<div><ul>
-<li><p class="first"><em>make_axes_gridspec</em> only handles the <em>orientation</em> keyword
-and cannot handle the “location” keyword.</p>
-</li>
-<li><p class="first"><em>make_axes_gridspec</em> should only be used with a subplot parent.</p>
-</li>
+<div><ul class="simple">
+<li><em>make_axes_gridspec</em> only handles the <em>orientation</em> keyword
+and cannot handle the “location” keyword.</li>
+<li><em>make_axes_gridspec</em> should only be used with a subplot parent.</li>
 <li><dl class="first docutils">
 <dt><em>make_axes</em> creates an instance of Axes. <em>make_axes_gridspec</em></dt>
-<dd><p class="first last">creates an instance of Subplot.</p>
-</dd>
+<dd>creates an instance of Subplot.</dd>
 </dl>
 </li>
 <li><dl class="first docutils">
 <dt><em>make_axes</em> updates the position of the</dt>
-<dd><p class="first last">parent. <em>make_axes_gridspec</em> replaces the grid_spec attribute
-of the parent with a new one.</p>
-</dd>
+<dd>parent. <em>make_axes_gridspec</em> replaces the grid_spec attribute
+of the parent with a new one.</dd>
 </dl>
 </li>
 </ul>
@@ -468,8 +460,8 @@ there could be some minor differences.</p>
 </div></blockquote>
 <table border="1" class="docutils">
 <colgroup>
-<col width="20%" />
-<col width="80%" />
+<col width="18%" />
+<col width="82%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Property</th>
@@ -488,7 +480,7 @@ there could be some minor differences.</p>
 of original axes between colorbar and new image axes</td>
 </tr>
 <tr class="row-odd"><td><em>shrink</em></td>
-<td>1.0; fraction by which to shrink the colorbar</td>
+<td>1.0; fraction by which to multiply the size of the colorbar</td>
 </tr>
 <tr class="row-even"><td><em>aspect</em></td>
 <td>20; ratio of long to short dimensions</td>
@@ -521,9 +513,9 @@ passed when creating the colorbar instance.</p>
     </div>
     <div class="footer">
         &copy; Copyright 2002 - 2012 John Hunter, Darren Dale, Eric Firing, Michael Droettboom and the Matplotlib development team; 2012 - 2017 The Matplotlib development team.
-      Last updated on Jul 16, 2017.
+      Last updated on Dec 04, 2017.
       Created using <a
-href="http://sphinx-doc.org/">Sphinx</a> 1.6.2.
+href="http://sphinx-doc.org/">Sphinx</a> 1.6.5.
     </div>
 
 <script>

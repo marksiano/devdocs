@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Overview of axes_grid1 toolkit &mdash; Matplotlib 2.0.2.post4416.dev0+g1df513f documentation</title>
+    <title>Overview of axes_grid1 toolkit &mdash; Matplotlib 2.1.0.post986+g1493192 documentation</title>
     
     <link rel="stylesheet" href="../../_static/mpl.css"
 type="text/css" />
@@ -17,7 +17,7 @@ type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '2.0.2.post4416.dev0+g1df513f',
+        VERSION:     '2.1.0.post986+g1493192',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -28,29 +28,34 @@ type="text/css" />
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within Matplotlib 2.0.2.post4416.dev0+g1df513f documentation"
+          title="Search within Matplotlib 2.1.0.post986+g1493192 documentation"
           href="../../_static/opensearch.xml"/>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html"
 />
     <link rel="search" title="Search" href="../../search.html"
 />
-    <link rel="top" title="Matplotlib 2.0.2.post4416.dev0+g1df513f documentation" href="../../index.html" /> 
+    <link rel="top" title="Matplotlib 2.1.0.post986+g1493192 documentation" href="../../index.html" />
+    <link rel="up" title="Tutorials" href="../index.html" />
+    <link rel="next" title="Interactive plots" href="../../users/interactive.html" />
+    <link rel="prev" title="Overview of axisartist toolkit" href="axisartist.html" /> 
 
 
   </head>
   <body>
 
 
+<div id="unreleased-message">
+    You are reading documentation for the unreleased version of Matplotlib.
+    <a href="https://matplotlib.org/search.html?q=Overview%20of%20axes_grid1%20toolkit&amp;check_keywords=yes&amp;area=default">
+        Try searching for the released version of this page instead?
+    </a>
+</div>
+<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px; position: relative;">
+<a href="../../index.html"><img src="../../_static/logo2.svg" width="540px" border="0" alt="matplotlib"/></a>
 
 <!-- The "Fork me on github" ribbon -->
-<img style="float: right; margin-bottom: -40px; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png" usemap="#ribbonmap"/>
-<map name="ribbonmap">
-    <area shape="poly" coords="15,0,148,-1,148,135" href="https://github.com/matplotlib/matplotlib" title="Fork me on GitHub" />
-</map>
-
-<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
-<a href="../../index.html"><img src="../../_static/logo2.svg" width="540px" border="0" alt="matplotlib"/></a>
+<div id="forkongithub"><a href="https://github.com/matplotlib/matplotlib">Fork me on GitHub</a></div>
 </div>
 
 
@@ -65,12 +70,20 @@ type="text/css" />
         <li class="right" >
           <a href="../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
+        <li class="right" >
+          <a href="../../users/interactive.html" title="Interactive plots"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="axisartist.html" title="Overview of axisartist toolkit"
+             accesskey="P">previous</a> |</li>
 
         <li><a href="../../index.html">home</a>|&nbsp;</li>
         <li><a href="../../gallery/index.html">examples</a>|&nbsp;</li>
         <li><a href="../index.html">tutorials</a>|&nbsp;</li>
         <li><a href="../../api/pyplot_summary.html">pyplot</a>|&nbsp;</li>
-        <li><a href="../../contents.html">docs</a> &raquo;</li> 
+        <li><a href="../../contents.html">docs</a> &raquo;</li>
+          <li><a href="../../users/index.html" >User’s Guide</a> &raquo;</li>
+          <li><a href="../index.html" accesskey="U">Tutorials</a> &raquo;</li> 
       </ul>
     </div>
 
@@ -78,12 +91,6 @@ type="text/css" />
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper"><a href="https://www.numfocus.org">
   <image src="https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&amp;colorA=E1523D&amp;colorB=007D8A">
-</a>
-
-<br/>
-
-<a href="http://depsy.org/package/python/matplotlib">
-  <img src="../../_static/depsy_badge.svg">
 </a>
 
 <br/>
@@ -123,6 +130,12 @@ Travis-CI: <a href="https://travis-ci.org/matplotlib/matplotlib">
 <h3>Related Topics</h3>
 <ul>
   <li><a href="../../contents.html">Documentation overview</a><ul>
+  <li><a href="../../users/index.html">User’s Guide</a><ul>
+  <li><a href="../index.html">Tutorials</a><ul>
+      <li>Previous: <a href="axisartist.html" title="previous chapter">Overview of axisartist toolkit</a></li>
+      <li>Next: <a href="../../users/interactive.html" title="next chapter">Interactive plots</a></li>
+  </ul></li>
+  </ul></li>
   </ul></li>
 </ul>
 </div>
@@ -447,8 +460,8 @@ top(or right)-axis to have different tick-locations, tick-labels, or
 tick-formatter for bottom(or left)-axis.</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ax2</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">twin</span><span class="p">()</span> <span class="c1"># now, ax2 is responsible for &quot;top&quot; axis and &quot;right&quot; axis</span>
 <span class="n">ax2</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([</span><span class="mf">0.</span><span class="p">,</span> <span class="o">.</span><span class="mi">5</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mf">1.5</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">])</span>
-<span class="n">ax2</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">([</span><span class="s2">&quot;0&quot;</span><span class="p">,</span> <span class="s2">r&quot;$ rac</span><span class="si">{1}{2}</span><span class="s2">\pi$&quot;</span><span class="p">,</span>
-                     <span class="s2">r&quot;$\pi$&quot;</span><span class="p">,</span> <span class="s2">r&quot;$ rac</span><span class="si">{3}{2}</span><span class="s2">\pi$&quot;</span><span class="p">,</span> <span class="s2">r&quot;$2\pi$&quot;</span><span class="p">])</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">([</span><span class="s2">&quot;0&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;$ rac</span><span class="si">{1}{2}</span><span class="s2">\pi$&quot;</span><span class="p">,</span>
+                     <span class="sa">r</span><span class="s2">&quot;$\pi$&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;$ rac</span><span class="si">{3}{2}</span><span class="s2">\pi$&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;$2\pi$&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
 <div class="figure align-center" id="id8">
@@ -642,14 +655,13 @@ data limits (AxesX and AxesY).</p>
 <a class="reference external image-reference" href="../../gallery/axes_grid1/simple_axes_divider3.html"><img alt="../../_images/sphx_glr_simple_axes_divider3_0011.png" src="../../_images/sphx_glr_simple_axes_divider3_0011.png" style="width: 275.0px; height: 200.0px;" /></a>
 <p class="caption"><span class="caption-text">Simple Axes Divider3</span></p>
 </div>
-<p><strong>Total running time of the script:</strong> ( 0 minutes  0.000 seconds)</p>
-<div class="sphx-glr-footer container">
-<div class="sphx-glr-download container">
+<div class="sphx-glr-footer docutils container">
+<div class="sphx-glr-download docutils container">
 <a class="reference download internal" href="../../_downloads/axes_grid.py" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">axes_grid.py</span></code></a></div>
-<div class="sphx-glr-download container">
+<div class="sphx-glr-download docutils container">
 <a class="reference download internal" href="../../_downloads/axes_grid.ipynb" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">axes_grid.ipynb</span></code></a></div>
 </div>
-<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.readthedocs.io">Generated by Sphinx-Gallery</a></p>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.readthedocs.io">Gallery generated by Sphinx-Gallery</a></p>
 </div>
 </div>
 
@@ -662,9 +674,9 @@ data limits (AxesX and AxesY).</p>
     </div>
     <div class="footer">
         &copy; Copyright 2002 - 2012 John Hunter, Darren Dale, Eric Firing, Michael Droettboom and the Matplotlib development team; 2012 - 2017 The Matplotlib development team.
-      Last updated on Jul 16, 2017.
+      Last updated on Dec 04, 2017.
       Created using <a
-href="http://sphinx-doc.org/">Sphinx</a> 1.6.2.
+href="http://sphinx-doc.org/">Sphinx</a> 1.6.5.
     </div>
 
 <script>

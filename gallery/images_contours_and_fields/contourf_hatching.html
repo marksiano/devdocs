@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Contourf Hatching &mdash; Matplotlib 2.0.2.post4416.dev0+g1df513f documentation</title>
+    <title>Contourf Hatching &mdash; Matplotlib 2.1.0.post986+g1493192 documentation</title>
     
     <link rel="stylesheet" href="../../_static/mpl.css"
 type="text/css" />
@@ -17,7 +17,7 @@ type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '2.0.2.post4416.dev0+g1df513f',
+        VERSION:     '2.1.0.post986+g1493192',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -28,29 +28,31 @@ type="text/css" />
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within Matplotlib 2.0.2.post4416.dev0+g1df513f documentation"
+          title="Search within Matplotlib 2.1.0.post986+g1493192 documentation"
           href="../../_static/opensearch.xml"/>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html"
 />
     <link rel="search" title="Search" href="../../search.html"
 />
-    <link rel="top" title="Matplotlib 2.0.2.post4416.dev0+g1df513f documentation" href="../../index.html" /> 
+    <link rel="top" title="Matplotlib 2.1.0.post986+g1493192 documentation" href="../../index.html" /> 
 
 
   </head>
   <body>
 
 
+<div id="unreleased-message">
+    You are reading documentation for the unreleased version of Matplotlib.
+    <a href="https://matplotlib.org/search.html?q=Contourf%20Hatching&amp;check_keywords=yes&amp;area=default">
+        Try searching for the released version of this page instead?
+    </a>
+</div>
+<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px; position: relative;">
+<a href="../../index.html"><img src="../../_static/logo2.svg" width="540px" border="0" alt="matplotlib"/></a>
 
 <!-- The "Fork me on github" ribbon -->
-<img style="float: right; margin-bottom: -40px; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png" usemap="#ribbonmap"/>
-<map name="ribbonmap">
-    <area shape="poly" coords="15,0,148,-1,148,135" href="https://github.com/matplotlib/matplotlib" title="Fork me on GitHub" />
-</map>
-
-<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
-<a href="../../index.html"><img src="../../_static/logo2.svg" width="540px" border="0" alt="matplotlib"/></a>
+<div id="forkongithub"><a href="https://github.com/matplotlib/matplotlib">Fork me on GitHub</a></div>
 </div>
 
 
@@ -78,12 +80,6 @@ type="text/css" />
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper"><a href="https://www.numfocus.org">
   <image src="https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&amp;colorA=E1523D&amp;colorB=007D8A">
-</a>
-
-<br/>
-
-<a href="http://depsy.org/package/python/matplotlib">
-  <img src="../../_static/depsy_badge.svg">
 </a>
 
 <br/>
@@ -124,45 +120,34 @@ Travis-CI: <a href="https://travis-ci.org/matplotlib/matplotlib">
             
   <div class="section" id="contourf-hatching">
 <span id="sphx-glr-gallery-images-contours-and-fields-contourf-hatching-py"></span><h1>Contourf Hatching<a class="headerlink" href="#contourf-hatching" title="Permalink to this headline">¶</a></h1>
-<ul class="sphx-glr-horizontal">
-<li><a class="first reference internal image-reference" href="../../_images/sphx_glr_contourf_hatching_001.png"><img alt="../../_images/sphx_glr_contourf_hatching_001.png" src="../../_images/sphx_glr_contourf_hatching_001.png" style="width: 300.79999999999995px; height: 225.6px;" /></a>
-</li>
-<li><a class="first reference internal image-reference" href="../../_images/sphx_glr_contourf_hatching_002.png"><img alt="../../_images/sphx_glr_contourf_hatching_002.png" src="../../_images/sphx_glr_contourf_hatching_002.png" style="width: 300.79999999999995px; height: 225.6px;" /></a>
-</li>
-</ul>
+<p>Demo filled contour plots with hatched patterns.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 
-
 <span class="c1"># invent some numbers, turning the x and y arrays into simple</span>
 <span class="c1"># 2d arrays, which make combining them together easier.</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">150</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">120</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.linspace.html#numpy.linspace" title="View documentation for numpy.linspace"><span class="n">np</span><span class="o">.</span><span class="n">linspace</span></a><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">150</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.linspace.html#numpy.linspace" title="View documentation for numpy.linspace"><span class="n">np</span><span class="o">.</span><span class="n">linspace</span></a><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">120</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">z</span> <span class="o">=</span> <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.cos.html#numpy.cos" title="View documentation for numpy.cos"><span class="n">np</span><span class="o">.</span><span class="n">cos</span></a><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.sin.html#numpy.sin" title="View documentation for numpy.sin"><span class="n">np</span><span class="o">.</span><span class="n">sin</span></a><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 
 <span class="c1"># we no longer need x and y to be 2 dimensional, so flatten them.</span>
 <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">flatten</span><span class="p">(),</span> <span class="n">y</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
-
-
-<span class="c1"># ---------------------------------------------</span>
-<span class="c1"># |                 Plot #1                   |</span>
-<span class="c1"># ---------------------------------------------</span>
-<span class="c1"># the simplest hatched plot with a colorbar</span>
-<span class="n">fig</span> <span class="o">=</span> <a href="../../api/_as_gen/matplotlib.figure.figaspect.html#matplotlib.figure" title="View documentation for matplotlib.pyplot.figure"><span class="n">plt</span><span class="o">.</span><span class="n">figure</span></a><span class="p">()</span>
+</pre></div>
+</div>
+<p>Plot 1: the simplest hatched plot with a colorbar</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <a href="../../api/_as_gen/matplotlib.pyplot.figure.html#matplotlib.pyplot.figure" title="View documentation for matplotlib.pyplot.figure"><span class="n">plt</span><span class="o">.</span><span class="n">figure</span></a><span class="p">()</span>
 <span class="n">cs</span> <span class="o">=</span> <a href="../../api/_as_gen/matplotlib.pyplot.contourf.html#matplotlib.pyplot.contourf" title="View documentation for matplotlib.pyplot.contourf"><span class="n">plt</span><span class="o">.</span><span class="n">contourf</span></a><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">hatches</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\\</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;//&#39;</span><span class="p">],</span>
                   <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s1">&#39;gray&#39;</span><span class="p">),</span>
                   <span class="n">extend</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span>
                   <span class="p">)</span>
-<a href="../../api/colorbar_api.html#matplotlib.colorbar" title="View documentation for matplotlib.pyplot.colorbar"><span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span></a><span class="p">()</span>
-
-
-<span class="c1"># ---------------------------------------------</span>
-<span class="c1"># |                 Plot #2                   |</span>
-<span class="c1"># ---------------------------------------------</span>
-<span class="c1"># a plot of hatches without color with a legend</span>
-<a href="../../api/_as_gen/matplotlib.figure.figaspect.html#matplotlib.figure" title="View documentation for matplotlib.pyplot.figure"><span class="n">plt</span><span class="o">.</span><span class="n">figure</span></a><span class="p">()</span>
+<a href="../../api/_as_gen/matplotlib.pyplot.colorbar.html#matplotlib.pyplot.colorbar" title="View documentation for matplotlib.pyplot.colorbar"><span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span></a><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="../../_images/sphx_glr_contourf_hatching_001.png" class="align-center" src="../../_images/sphx_glr_contourf_hatching_001.png" />
+<p>Plot 2: a plot of hatches without color with a legend</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><a href="../../api/_as_gen/matplotlib.pyplot.figure.html#matplotlib.pyplot.figure" title="View documentation for matplotlib.pyplot.figure"><span class="n">plt</span><span class="o">.</span><span class="n">figure</span></a><span class="p">()</span>
 <span class="n">n_levels</span> <span class="o">=</span> <span class="mi">6</span>
-<a href="../../api/contour_api.html#matplotlib.contour" title="View documentation for matplotlib.pyplot.contour"><span class="n">plt</span><span class="o">.</span><span class="n">contour</span></a><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">n_levels</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linestyles</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
+<a href="../../api/_as_gen/matplotlib.pyplot.contour.html#matplotlib.pyplot.contour" title="View documentation for matplotlib.pyplot.contour"><span class="n">plt</span><span class="o">.</span><span class="n">contour</span></a><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">n_levels</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linestyles</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
 <span class="n">cs</span> <span class="o">=</span> <a href="../../api/_as_gen/matplotlib.pyplot.contourf.html#matplotlib.pyplot.contourf" title="View documentation for matplotlib.pyplot.contourf"><span class="n">plt</span><span class="o">.</span><span class="n">contourf</span></a><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">n_levels</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span>
                   <span class="n">hatches</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\\</span><span class="s1">&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\\\\</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;*&#39;</span><span class="p">],</span>
                   <span class="n">extend</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span>
@@ -170,20 +155,20 @@ Travis-CI: <a href="https://travis-ci.org/matplotlib/matplotlib">
 
 <span class="c1"># create a legend for the contour set</span>
 <span class="n">artists</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="n">cs</span><span class="o">.</span><span class="n">legend_elements</span><span class="p">()</span>
-<a href="../../api/legend_api.html#matplotlib.legend" title="View documentation for matplotlib.pyplot.legend"><span class="n">plt</span><span class="o">.</span><span class="n">legend</span></a><span class="p">(</span><span class="n">artists</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">handleheight</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<a href="../../api/_as_gen/matplotlib.pyplot.legend.html#matplotlib.pyplot.legend" title="View documentation for matplotlib.pyplot.legend"><span class="n">plt</span><span class="o">.</span><span class="n">legend</span></a><span class="p">(</span><span class="n">artists</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">handleheight</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 
 
 <a href="../../api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="View documentation for matplotlib.pyplot.show"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<p><strong>Total running time of the script:</strong> ( 0 minutes  0.239 seconds)</p>
-<div class="sphx-glr-footer container">
-<div class="sphx-glr-download container">
+<img alt="../../_images/sphx_glr_contourf_hatching_002.png" class="align-center" src="../../_images/sphx_glr_contourf_hatching_002.png" />
+<div class="sphx-glr-footer docutils container">
+<div class="sphx-glr-download docutils container">
 <a class="reference download internal" href="../../_downloads/contourf_hatching.py" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">contourf_hatching.py</span></code></a></div>
-<div class="sphx-glr-download container">
+<div class="sphx-glr-download docutils container">
 <a class="reference download internal" href="../../_downloads/contourf_hatching.ipynb" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">contourf_hatching.ipynb</span></code></a></div>
 </div>
-<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.readthedocs.io">Generated by Sphinx-Gallery</a></p>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.readthedocs.io">Gallery generated by Sphinx-Gallery</a></p>
 </div>
 
 
@@ -195,9 +180,9 @@ Travis-CI: <a href="https://travis-ci.org/matplotlib/matplotlib">
     </div>
     <div class="footer">
         &copy; Copyright 2002 - 2012 John Hunter, Darren Dale, Eric Firing, Michael Droettboom and the Matplotlib development team; 2012 - 2017 The Matplotlib development team.
-      Last updated on Jul 16, 2017.
+      Last updated on Dec 04, 2017.
       Created using <a
-href="http://sphinx-doc.org/">Sphinx</a> 1.6.2.
+href="http://sphinx-doc.org/">Sphinx</a> 1.6.5.
     </div>
 
 <script>
